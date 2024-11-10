@@ -8,6 +8,7 @@ using Colossal.Entities;
 using Game.Common;
 using Game.Routes;
 using Game.UI;
+using Game.UI.InGame;
 using Unity.Entities;
 using Color = Game.Routes.Color;
 using SubObject = Game.Objects.SubObject;
@@ -86,6 +87,11 @@ public static class LinesUtils
             .OrderBy(t => int.Parse(t.Name))
             .Where(x => x.Type == lineType)
             .ElementAtOrValue(index, new TransportLineModel(Empty, Empty, UnityEngine.Color.clear));
+    }
+
+    private static List<TransportLineModel> GetAllLinesList()
+    {
+        return null;
     }
     
     public static string GetLineName(Entity buildingRef, int index, string lineType)

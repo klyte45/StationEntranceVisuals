@@ -1,33 +1,71 @@
 ﻿<Publish>
-	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
-	<ModId Value="" />
-	<!--Name of the mod to display to players-->
-	<DisplayName Value="AutoStationNaming" />
-	<!--Short description of the mod-->
-	<ShortDescription Value="This is a short description" />
-	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
-	<!--LongDescription Value="This is a long description" /-->
+	<ModId Value="94028" />
+	<DisplayName Value="Station Entrance Visuals" />
+	<ShortDescription Value="Automatically have train and subway lines information at your stations after installing this mod." />
 	<LongDescription>
-This is a long description
+# Station Entrance Visuals for Write Everywhere
+
+Automatically have train and subway lines information at your stations after installing this mod. This is an evolution of the Subway Decal Asset Pack but the difference here is that you don't need to place anything manually. Everything is automatic.
+
+This mod is made possible by Write Everywhere. Thanks to Klyte45 for his incredible work.
+
+## How it works
+You just need to install this mod and subway and train stations will start having the visuals. This mod requires Write Everywhere but you don't need to change anything to get this working
+
+## Station names
+It will get the building name to write the station name on the entrances. If you change the name, it will automatically update the entrances. If you have stations built with the Subway Freedom Mod, change the subway module name and the upgrade name to "Entrance #".
+
+# Station Lines
+You will see a maximum of four lines by station sorted by number. The mod will get the last number of your line. If your line name for example is "Subway Line 7" or "Train Line 7", you will see a background color of the line and the number 7 on top. If your line does not have any numbers on their name, the mod will use a predefined number for the line.
+Future support for lines as letters will added so if you name your lines like "Line F", the letter F will be displayed.
+
+If you are on a train station, train lines will be separated on the left and subway lines on the right.
+
+# Entrance names
+The name of the entrances works differently depending on the type of station
+
+- For vanilla stations:
+- The entrance letter is predefined and you can't change their name. It is localized as "Entrance A" or "Entrance B" and so on.
+- For Subway Freedom:
+- Stations built with subway freedom will have the entrance name as the upgrade name. Change the upgrade name to change the entrance name and change the module name to change the station name.
+
+## If you see WE: Error loading some prefabs layouts
+This just means that you might not have all the station assets to load like from Subway Freedom. You can just ignore this warning.
+
+## If you decide to uninstall this mod
+If some day you decide to delete this mod but keep Write Everywhere, you will have to do some work.
+
+#### Delete the folders bellow:
+
+#### YOUR_USER_PATH can be something like C:\Users\rodri
+
+#### YOUR_USER_PATH\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\Klyte45Mods\WriteEverywhere\imageAtlases\StationEntranceVisuals
+
+#### YOUR_USER_PATH\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\Klyte45Mods\WriteEverywhere\layouts\StationEntranceVisuals
+
+You just need to delete the folders that have `StationEntranceVisuals`. You can keep the other folders iside `imageAtlases` and `layouts`.
+
+## Not all stations have visuals
+I didn't add the visuals to a few stations that didn't have a place to display the visuals like the small overground subway station and the small and medium train station.
+
+### Thanks for Klyte45 for all the work on Write Everywhere.
 	</LongDescription>
-	<!--Thumbnail-->
-	<Thumbnail Value="Properties/Thumbnail.png" />
-	<!--Screenshot, can be set multiple times-->
-	<Screenshot Value="" />
-	<!--Tag, can be set multiple times-->
-	<Tag Value="" />
-	<!--Link to the forum post where the mod can be discussed-->
-	<ForumLink Value="" />
-	<!--Version of the mod-->
-	<ModVersion Value="1.0" />
-	<!--Recommended version of the base game to use the mod-->
-	<GameVersion Value="1.0.*" />
-	<!--Dependency for the mod, can be set multiple times-->
-	<Dependency Id="" />
-	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="" />
-	<!--ChangeLog>
-	</ChangeLog-->
-	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon, buymeacoffee, kofi, crowdin, gitlab-->
-	<ExternalLink Type="" Url="" />
+	<Thumbnail Value="ParadoxRes/Thumbnail.png" />
+	<Screenshot Value="ParadoxRes/Screenshot1.png" />
+	<Screenshot Value="ParadoxRes/Screenshot2.png" />
+	<Screenshot Value="ParadoxRes/Screenshot3.png" />
+	<Screenshot Value="ParadoxRes/Screenshot4.png" />
+	<Screenshot Value="ParadoxRes/Screenshot5.png" />
+	<Screenshot Value="ParadoxRes/Screenshot6.png" />
+	<Tag Value="Code Mod" />
+	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
+	<ModVersion Value="1.0.1" />
+	<GameVersion Value="1.1.*" />
+	<Dependency Id="92908" />
+	<Dependency Id="75426" />
+	<ChangeLog>
+		# Mod Released
+	</ChangeLog>
+	<ExternalLink Type="kofi" Url="https://ko-fi.com/rodrigmatrix" />
+	<ExternalLink Type="github" Url="https://github.com/rodrigmatrix/StationEntranceVisuals" />
 </Publish>

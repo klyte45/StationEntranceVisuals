@@ -8,6 +8,7 @@
 		
 		<!--The file where mod information which is required for publishing mod on PDX mods are stored-->
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
+		<AdditionalFilesDirectory>Resources</AdditionalFilesDirectory>
 	</PropertyGroup>
 	
 	<!--Imports must be after PropertyGroup block-->
@@ -28,6 +29,9 @@
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Colossal.PSI.Common">
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="Unity.Burst">
@@ -60,5 +64,12 @@
 		<None Include="$(ModPropsFile)" Link="Properties\Mod.props" />
 		<None Include="$(ModTargetsFile)" Link="Properties\Mod.targets" />
 	</ItemGroup>
+
+	<Target Name="GetAdditionalFiles" AfterTargets="DeployWIP">
+		<ItemGroup>
+			<AdditionalFilesToDeploy Include="$(AdditionalFilesDirectory)\**\*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(AdditionalFilesToDeploy)" DestinationFiles="@(AdditionalFilesToDeploy->'$(DeployDir)\%(RecursiveDir)%(Filename)%(Extension)')" />
+	</Target>
 
 </Project>

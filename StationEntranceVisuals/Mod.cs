@@ -2,6 +2,8 @@
 using Game;
 using Game.Modding;
 using Game.SceneFlow;
+using Game.Settings;
+using StationEntranceVisuals.Utils;
 
 namespace StationEntranceVisuals
 {
@@ -15,6 +17,8 @@ namespace StationEntranceVisuals
 
             if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
                 log.Info($"Current mod asset at {asset.path}");
+
+            FileUtils.CopyFiles();
         }
 
         public void OnDispose()
