@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using Colossal.PSI.Environment;
 
 namespace StationEntranceVisuals.Utils;
@@ -13,7 +12,7 @@ public static class FileUtils
      
      private static readonly string ModName = "StationEntranceVisuals";
      
-     private static readonly string LocalModVersion = "1";
+     private static readonly string ModFilesVersion = "3";
 
      private static readonly string VersionFileName = "version.txt";
      
@@ -37,10 +36,22 @@ public static class FileUtils
      private static readonly string WeImagesDirectory = Path.Combine(
           WePath,
           "imageAtlases",
-          "StationEntranceVisuals"
+          "_StationEntranceVisuals"
      );
      
      private static readonly string WeLayoutsDirectory = Path.Combine(
+          WePath,
+          "layouts",
+          "_StationEntranceVisuals"
+     );
+     
+     private static readonly string OldWeImagesDirectory = Path.Combine(
+          WePath,
+          "imageAtlases",
+          "StationEntranceVisuals"
+     );
+     
+     private static readonly string OldWeLayoutsDirectory = Path.Combine(
           WePath,
           "layouts",
           "StationEntranceVisuals"
@@ -55,27 +66,28 @@ public static class FileUtils
                
                // Creating folder for layouts
                CreateIfMissing(WeLayoutsDirectory);
+
+               // Delete old folder name
+               DeleteIfExists(OldWeImagesDirectory);
+               DeleteIfExists(OldWeLayoutsDirectory);
                
                var directories = Directory.GetDirectories(LocalModPath, ModId + "_*");
                string modPath;
-               string modVersion;
                if (directories.Length > 0)
                {
                     modPath = directories.OrderByDescending(item => item.Split('_').Last()).First();
-                    modVersion = modPath.Split('_')[1];
                }
                else
                {
                     modPath = Path.Combine(
                          DebugModPath,
                          ModName
-                    ); 
-                    modVersion = LocalModVersion;
+                    );
                }
                
-               var createdImageVersion = CreateVersion(WeImagesDirectory, modVersion);
+               var createdImageVersion = CreateVersion(WeImagesDirectory, ModFilesVersion);
                
-               var createdLayoutVersion = CreateVersion(WeLayoutsDirectory, modVersion);
+               var createdLayoutVersion = CreateVersion(WeLayoutsDirectory, ModFilesVersion);
 
                var localImagesDirectory = Path.Combine(
                     modPath,
@@ -162,5 +174,12 @@ public static class FileUtils
           var folderExists = Directory.Exists(path);
           if (!folderExists)
                Directory.CreateDirectory(path);
+     }
+     
+     private static void DeleteIfExists(string path)
+     {
+          var folderExists = Directory.Exists(path);
+          if (folderExists)
+               Directory.Delete(path, true);
      }
 }

@@ -1,8 +1,8 @@
-﻿using Colossal.Logging;
+﻿using System.ComponentModel;
+using Colossal.Logging;
 using Game;
 using Game.Modding;
 using Game.SceneFlow;
-using Game.Settings;
 using StationEntranceVisuals.Utils;
 
 namespace StationEntranceVisuals
@@ -13,13 +13,20 @@ namespace StationEntranceVisuals
 
         public void OnLoad(UpdateSystem updateSystem)
         {
-            log.Info(nameof(OnLoad));
+            log.Info(nameof(OnLoad)); 
 
             if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
                 log.Info($"Current mod asset at {asset.path}");
-
-            FileUtils.CopyFiles();
+            
+            var bw = new BackgroundWorker();
+            bw.DoWork += CopyFiles;
+            bw.RunWorkerAsync();
         }
+
+        private static void CopyFiles(object sender, DoWorkEventArgs e)
+        {
+            FileUtils.CopyFiles();
+        }  
 
         public void OnDispose()
         {

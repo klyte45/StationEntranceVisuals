@@ -17,7 +17,7 @@ It will get the building name to write the station name on the entrances. If you
 
 # Station Lines
 You will see a maximum of four lines by station sorted by number. The mod will get the last number of your line. If your line name for example is "Subway Line 7" or "Train Line 7", you will see a background color of the line and the number 7 on top. If your line does not have any numbers on their name, the mod will use a predefined number for the line.
-Future support for lines as letters will added so if you name your lines like "Line F", the letter F will be displayed.
+Future support for lines as letters will be added so if you name your lines like "Line F", the letter F will be displayed.
 
 If you are on a train station, train lines will be separated on the left and subway lines on the right.
 
@@ -37,13 +37,13 @@ If some day you decide to delete this mod but keep Write Everywhere, you will ha
 
 #### Delete the folders bellow:
 
-#### YOUR_USER_PATH can be something like C:\Users\rodri
+#### YOUR_USER_PATH can be something like C:\Users\user
 
-#### YOUR_USER_PATH\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\Klyte45Mods\WriteEverywhere\imageAtlases\StationEntranceVisuals
+#### YOUR_USER_PATH\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\Klyte45Mods\WriteEverywhere\imageAtlases\_StationEntranceVisuals
 
-#### YOUR_USER_PATH\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\Klyte45Mods\WriteEverywhere\layouts\StationEntranceVisuals
+#### YOUR_USER_PATH\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\Klyte45Mods\WriteEverywhere\layouts\_StationEntranceVisuals
 
-You just need to delete the folders that have `StationEntranceVisuals`. You can keep the other folders iside `imageAtlases` and `layouts`.
+You just need to delete the folders that have `StationEntranceVisuals`. You can keep the other folders inside `imageAtlases` and `layouts`.
 
 ## Not all stations have visuals
 I didn't add the visuals to a few stations that didn't have a place to display the visuals like the small overground subway station and the small and medium train station.
@@ -59,12 +59,14 @@ I didn't add the visuals to a few stations that didn't have a place to display t
 	<Screenshot Value="ParadoxRes/Screenshot6.png" />
 	<Tag Value="Code Mod" />
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-	<ModVersion Value="1.0.1" />
+	<ModVersion Value="1.0.2" />
 	<GameVersion Value="1.1.*" />
 	<Dependency Id="92908" />
 	<Dependency Id="75426" />
 	<ChangeLog>
-		# Mod Released
+# Release 1.0.2
+- Added support for German Station and German Extra Entrance Station
+- Folder name changed
 	</ChangeLog>
 	<ExternalLink Type="kofi" Url="https://ko-fi.com/rodrigmatrix" />
 	<ExternalLink Type="github" Url="https://github.com/rodrigmatrix/StationEntranceVisuals" />
