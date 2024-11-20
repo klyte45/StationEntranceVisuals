@@ -38,16 +38,15 @@ public static class LinesUtils
             foreach (var route in routes) {
                 if (entityManager.TryGetComponent<Owner>(route.m_Waypoint, out var owner))
                 {
-                    if (entityManager.TryGetComponent<RouteNumber>(owner.m_Owner, out var routeNumber))
-                    {
-                        var lettersRegex = new Regex("[^a-zA-Z]+");
-                        var entityDebugName = _nameSystem.GetDebugName(owner.m_Owner);
-                        var entityName = lettersRegex.Replace(entityDebugName, "");
-                        entityManager.TryGetComponent<Color>(owner.m_Owner, out var routeColor);
-                        var lineNumber = string.Join("", _nameSystem.GetRenderedLabelName(owner.m_Owner).Where(Char.IsDigit));
-                        var routeString = lineNumber.Length > 0 ? lineNumber : routeNumber.m_Number.ToString();
-                        lineNumberList.Add(new TransportLineModel(entityName, routeString, routeColor.m_Color));
-                    }
+                    entityManager.TryGetComponent<RouteNumber>(owner.m_Owner, out var routeNumber);
+                    entityManager.TryGetComponent<Color>(owner.m_Owner, out var routeColor);
+                    var lettersRegex = new Regex("[^a-zA-Z]+");
+                    var entityDebugName = _nameSystem.GetDebugName(owner.m_Owner);
+                    var entityName = lettersRegex.Replace(entityDebugName, "");
+
+                    var lineName = _nameSystem.GetRenderedLabelName(owner.m_Owner).Split(' ').LastOrDefault();
+                    string routeString = lineName is { Length: >= 1 and <= 2 } ? lineName : routeNumber.m_Number.ToString();
+                    lineNumberList.Add(new TransportLineModel(entityName, routeString, routeColor.m_Color));
                 }
             }
         }
@@ -84,7 +83,7 @@ public static class LinesUtils
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
 
         return GetFilteredLinesList(buildingRef)
-            .OrderBy(t => int.Parse(t.Name))
+            .OrderBy(t => t.Name)
             .Where(x => x.Type == lineType)
             .ElementAtOrValue(index, new TransportLineModel(Empty, Empty, UnityEngine.Color.clear));
     }

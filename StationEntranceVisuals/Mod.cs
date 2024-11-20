@@ -2,6 +2,7 @@
 using Colossal.Logging;
 using Game;
 using Game.Modding;
+using Game.Prefabs;
 using Game.SceneFlow;
 using StationEntranceVisuals.Utils;
 

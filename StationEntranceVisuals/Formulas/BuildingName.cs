@@ -1,6 +1,7 @@
 ﻿using System;
 using Colossal.Entities;
 using Game.Common;
+using Game.SceneFlow;
 using Game.UI;
 using Unity.Entities;
 
@@ -11,7 +12,7 @@ internal static class BuildingName
 
     private static NameSystem _nameSystem;
 
-    public static readonly Func<Entity, string> GetMainBuildingNameBinding = (buildingRef) =>
+    private static readonly Func<Entity, string> GetMainBuildingNameBinding = (buildingRef) =>
     {
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
         World.DefaultGameObjectInjectionWorld.EntityManager.TryGetComponent<Owner>(buildingRef, out var owner);
@@ -19,18 +20,17 @@ internal static class BuildingName
         return _nameSystem.GetRenderedLabelName(owner.m_Owner);
     };
 
-    public static readonly Func<Entity, string> GetBuildingNameBinding = (buildingRef) =>
+    private static readonly Func<Entity, string> GetBuildingNameBinding = (buildingRef) =>
     {
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
 
         return _nameSystem.GetRenderedLabelName(buildingRef);
     };
-    
-    public static readonly Func<Entity, string> GetEntranceLocalizedNameBinding = (buildingRef) =>
-    {
-        _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
 
-        return "Entrance";
+    private static readonly Func<Entity, string> GetEntranceLocalizedNameBinding = (_) =>
+    {
+        GameManager.instance.localizationManager.activeDictionary.TryGetValue("StationEntranceVisuals.Entrance", out var result);
+        return result.Length > 0 ? result : "Entrance";
     };
 
     public static string GetBuildingName(Entity buildingRef) => GetBuildingNameBinding?.Invoke(buildingRef) ?? "<???>";

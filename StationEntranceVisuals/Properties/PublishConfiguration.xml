@@ -10,14 +10,14 @@ Automatically have train and subway lines information at your stations after ins
 This mod is made possible by Write Everywhere. Thanks to Klyte45 for his incredible work.
 
 ## How it works
-You just need to install this mod and subway and train stations will start having the visuals. This mod requires Write Everywhere but you don't need to change anything to get this working
+You just need to install this mod and subway and train stations will start having the visuals. This mod requires Write Everywhere, but you don't need to change anything to get this working
 
 ## Station names
 It will get the building name to write the station name on the entrances. If you change the name, it will automatically update the entrances. If you have stations built with the Subway Freedom Mod, change the subway module name and the upgrade name to "Entrance #".
 
 # Station Lines
-You will see a maximum of four lines by station sorted by number. The mod will get the last number of your line. If your line name for example is "Subway Line 7" or "Train Line 7", you will see a background color of the line and the number 7 on top. If your line does not have any numbers on their name, the mod will use a predefined number for the line.
-Future support for lines as letters will be added so if you name your lines like "Line F", the letter F will be displayed.
+You will see a maximum of four lines by station sorted by number. The mod will get the last char of your line. If your line name for example is "Subway Line 7" or "Train Line 7", you will see a background color of the line and the number 7 on top.
+If your line is "Line F", the letter F will be displayed. You can also name lines as "Line M2" and the name will be "M2". There is a limit of two characters by line.
 
 If you are on a train station, train lines will be separated on the left and subway lines on the right.
 
@@ -59,14 +59,23 @@ I didn't add the visuals to a few stations that didn't have a place to display t
 	<Screenshot Value="ParadoxRes/Screenshot6.png" />
 	<Tag Value="Code Mod" />
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-	<ModVersion Value="1.0.2" />
+	<ModVersion Value="1.0.3" />
 	<GameVersion Value="1.1.*" />
 	<Dependency Id="92908" />
 	<Dependency Id="75426" />
 	<ChangeLog>
-# Release 1.0.2
-- Added support for German Station and German Extra Entrance Station
-- Folder name changed
+# Release 1.0.3
+- Added support for lines as letters. You can now name a line like Subway Line M and you will get the name M for the line.
+- Added translations to:
+	- German
+	- Italian
+	- Spanish
+	- French
+	- Brazilian Portuguese
+	- Chinese Traditional
+	- Chinese Simplified
+	- Russian
+	- Ukrainian
 	</ChangeLog>
 	<ExternalLink Type="kofi" Url="https://ko-fi.com/rodrigmatrix" />
 	<ExternalLink Type="github" Url="https://github.com/rodrigmatrix/StationEntranceVisuals" />
