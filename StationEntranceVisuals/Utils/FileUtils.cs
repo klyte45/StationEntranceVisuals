@@ -12,7 +12,7 @@ public static class FileUtils
      
      private static readonly string ModName = "StationEntranceVisuals";
      
-     private static readonly string ModFilesVersion = "3";
+     private static readonly string ModFilesVersion = "4";
 
      private static readonly string VersionFileName = "version.txt";
      
