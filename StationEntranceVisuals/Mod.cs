@@ -7,6 +7,7 @@ using StationEntranceVisuals.BridgeWE;
 using StationEntranceVisuals.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -24,7 +25,18 @@ namespace StationEntranceVisuals
                 log.Info($"Current mod asset at {asset.path}");
 
             DoPatches();
-            WEImageManagementBridge.RegisterForAtlasCacheResetNotification(FileUtils.RegisterFilesToWE);
+            RegisterFilesToWE();
+        }
+
+        private void RegisterFilesToWE()
+        {
+            string modPath = Path.GetDirectoryName(GameManager.instance.modManager.First(x => x.asset.assembly == typeof(Mod).Assembly).asset.path);
+            var localImagesDirectory = Path.Combine(modPath, "weImageAtlases");
+            var localLayoutsDirectory = Path.Combine(modPath, "weLayouts");
+            WEImageManagementBridge.RegisterImageAtlas(typeof(Mod).Assembly, "main", Directory.GetFiles(localImagesDirectory));
+            WEFontManagementBridge.RegisterModFonts(typeof(Mod).Assembly, Path.Combine(modPath, "fonts"));
+            WETemplatesManagementBridge.RegisterCustomTemplates(typeof(Mod).Assembly, localLayoutsDirectory);
+            WETemplatesManagementBridge.RegisterLoadableTemplatesFolder(typeof(Mod).Assembly, localLayoutsDirectory);
         }
 
         private void DoPatches()
@@ -52,7 +64,6 @@ namespace StationEntranceVisuals
         public void OnDispose()
         {
             log.Info(nameof(OnDispose));
-            WEImageManagementBridge.UnregisterForAtlasCacheResetNotification(FileUtils.RegisterFilesToWE);
         }
 
     }

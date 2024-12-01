@@ -73,6 +73,10 @@
 	  <PackageReference Include="Lib.Harmony" Version="2.3.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Resources\fonts\" />
+	</ItemGroup>
+
 	<Target Name="GetAdditionalFiles" AfterTargets="DeployWIP">
 		<ItemGroup>
 			<AdditionalFilesToDeploy Include="$(AdditionalFilesDirectory)\**\*.*" />

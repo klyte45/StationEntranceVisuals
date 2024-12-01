@@ -53,7 +53,7 @@
           <offsetRotation x="-0" y="270" z="0" />
           <scale x="0.986" y="0.58" z="1" />
         </transform>
-        <imageMesh atlas="_StationEntranceVisuals">
+        <imageMesh atlas="StationEntranceVisuals:main">
           <image>StationSign</image>
         </imageMesh>
         <defaultStyle>
@@ -100,7 +100,7 @@
             <offsetRotation x="-0" y="270" z="0" />
             <scale x="0.15" y="0.15" z="1" />
           </transform>
-          <imageMesh atlas="_StationEntranceVisuals">
+          <imageMesh atlas="StationEntranceVisuals:main">
             <image formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetStationOperatorName">MetroOperatorBlack</image>
           </imageMesh>
           <defaultStyle>
@@ -477,7 +477,7 @@
           <offsetRotation x="-0" y="270" z="0" />
           <scale x="0.986" y="0.58" z="1" />
         </transform>
-        <imageMesh atlas="_StationEntranceVisuals">
+        <imageMesh atlas="StationEntranceVisuals:main">
           <image>StationSign</image>
         </imageMesh>
         <defaultStyle>
@@ -524,7 +524,7 @@
             <offsetRotation x="-0" y="270" z="0" />
             <scale x="0.15" y="0.15" z="1" />
           </transform>
-          <imageMesh atlas="_StationEntranceVisuals">
+          <imageMesh atlas="StationEntranceVisuals:main">
             <image formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetStationOperatorName">MetroOperatorBlack</image>
           </imageMesh>
           <defaultStyle>
