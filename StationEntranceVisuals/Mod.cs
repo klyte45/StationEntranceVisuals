@@ -34,7 +34,6 @@ namespace StationEntranceVisuals
             var localImagesDirectory = Path.Combine(modPath, "weImageAtlases");
             var localLayoutsDirectory = Path.Combine(modPath, "weLayouts");
             WEImageManagementBridge.RegisterImageAtlas(typeof(Mod).Assembly, "main", Directory.GetFiles(localImagesDirectory));
-            WEFontManagementBridge.RegisterModFonts(typeof(Mod).Assembly, Path.Combine(modPath, "fonts"));
             WETemplatesManagementBridge.RegisterCustomTemplates(typeof(Mod).Assembly, localLayoutsDirectory);
             WETemplatesManagementBridge.RegisterLoadableTemplatesFolder(typeof(Mod).Assembly, localLayoutsDirectory);
         }
