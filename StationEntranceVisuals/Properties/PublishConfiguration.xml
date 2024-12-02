@@ -29,22 +29,6 @@ The name of the entrances works differently depending on the type of station
 - For Subway Freedom:
 - Stations built with subway freedom will have the entrance name as the upgrade name. Change the upgrade name to change the entrance name and change the module name to change the station name.
 
-## If you see WE: Error loading some prefabs layouts
-This just means that you might not have all the station assets to load like from Subway Freedom. You can just ignore this warning.
-
-## If you decide to uninstall this mod
-If some day you decide to delete this mod but keep Write Everywhere, you will have to do some work.
-
-#### Delete the folders bellow:
-
-#### YOUR_USER_PATH can be something like C:\Users\user
-
-#### YOUR_USER_PATH\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\Klyte45Mods\WriteEverywhere\imageAtlases\_StationEntranceVisuals
-
-#### YOUR_USER_PATH\AppData\LocalLow\Colossal Order\Cities Skylines II\ModsData\Klyte45Mods\WriteEverywhere\layouts\_StationEntranceVisuals
-
-You just need to delete the folders that have `StationEntranceVisuals`. You can keep the other folders inside `imageAtlases` and `layouts`.
-
 ## Not all stations have visuals
 I didn't add the visuals to a few stations that didn't have a place to display the visuals like the small overground subway station and the small and medium train station.
 
@@ -59,23 +43,15 @@ I didn't add the visuals to a few stations that didn't have a place to display t
 	<Screenshot Value="ParadoxRes/Screenshot6.png" />
 	<Tag Value="Code Mod" />
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-	<ModVersion Value="1.0.4" />
+	<ModVersion Value="1.1" />
 	<GameVersion Value="1.1.*" />
 	<Dependency Id="92908" />
 	<Dependency Id="75426" />
 	<ChangeLog>
-# Release 1.0.4
-- Added support for lines as letters. You can now name a line like Subway Line M and you will get the name M for the line.
-- Added translations to:
-	- German
-	- Italian
-	- Spanish
-	- French
-	- Brazilian Portuguese
-	- Chinese Traditional
-	- Chinese Simplified
-	- Russian
-	- Ukrainian
+# Release 1.1
+- Mod is now integrated with the new Write Everywhere bridge. This will help with a better integration and performance.
+If you find any issues, please report here.
+- Updated assets
 	</ChangeLog>
 	<ExternalLink Type="kofi" Url="https://ko-fi.com/rodrigmatrix" />
 	<ExternalLink Type="github" Url="https://github.com/rodrigmatrix/StationEntranceVisuals" />
