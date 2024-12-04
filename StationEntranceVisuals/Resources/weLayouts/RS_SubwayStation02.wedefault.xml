@@ -1,0 +1,450 @@
+<WELayout>
+  <children>
+    <self itemName="Decals 1">
+      <transform>
+        <offsetPosition x="0.07999875" y="2.90999985" z="14.3500023" />
+        <offsetRotation x="-0" y="90" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+      </transform>
+      <textMesh fontName="HelveticaWorld_Regular">
+        <text></text>
+      </textMesh>
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Station name">
+        <transform>
+          <offsetPosition x="-0.01" y="0.07000002" z="0" />
+          <offsetRotation x="-0" y="270" z="0" />
+          <scale x="0.15" y="0.15" z="1" />
+        </transform>
+        <textMesh fontName="HelveticaWorld_Regular">
+          <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetBuildingName"></text>
+        </textMesh>
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Background Image">
+        <transform>
+          <offsetPosition x="-0.005" y="0" z="0" />
+          <offsetRotation x="-0" y="270" z="0" />
+          <scale x="0.986" y="0.58" z="1" />
+        </transform>
+        <imageMesh atlas="StationEntranceVisuals:main">
+          <image>StationSign</image>
+        </imageMesh>
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Wheelchair Image">
+        <transform>
+          <offsetPosition x="-0.02" y="-0.2" z="-0.819999933" />
+          <offsetRotation x="-0" y="270" z="0" />
+          <scale x="0.15" y="0.15" z="1" />
+        </transform>
+        <imageMesh atlas="StationEntranceVisuals:main">
+          <image>Wheelchair</image>
+        </imageMesh>
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Subway Lines Group">
+        <transform>
+          <offsetPosition x="0" y="-0.2" z="-0.11" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="1" y="1" z="1" />
+        </transform>
+        <textMesh fontName="">
+          <text></text>
+        </textMesh>
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+      <children>
+        <self itemName="Subway Operator Image">
+          <transform>
+            <offsetPosition x="-0.01" y="0" z="0.8600001" />
+            <offsetRotation x="-0" y="270" z="0" />
+            <scale x="0.15" y="0.15" z="1" />
+          </transform>
+          <imageMesh atlas="StationEntranceVisuals:main">
+            <image formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetStationOperatorName">MetroOperatorBlack</image>
+          </imageMesh>
+          <defaultStyle>
+            <color>FFFFFFFF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+      </children>
+      <children>
+        <self itemName="First Line Group">
+          <transform>
+            <offsetPosition x="-0.01" y="0" z="0.659999967" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+          </transform>
+          <textMesh fontName="">
+            <text></text>
+          </textMesh>
+          <defaultStyle>
+            <color>FFFFFFFF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Color">
+            <transform>
+              <offsetPosition x="0" y="0" z="0" />
+              <offsetRotation x="-0" y="270" z="0" />
+              <scale x="0.165" y="0.165" z="1" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetFirstLineColor">910000FF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Text">
+            <transform>
+              <offsetPosition x="-0.01" y="0" z="0" />
+              <offsetRotation x="-0" y="270" z="0" />
+              <scale x="0.1" y="0.1" z="1" />
+            </transform>
+            <textMesh fontName="">
+              <text formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetFirstLineName">5</text>
+            </textMesh>
+            <defaultStyle>
+              <color>FFFFFFFF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+      </children>
+      <children>
+        <self itemName="Second Line Group">
+          <transform>
+            <offsetPosition x="-0.01" y="0" z="0.469999969" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+          </transform>
+          <textMesh fontName="">
+            <text></text>
+          </textMesh>
+          <defaultStyle>
+            <color>FFFFFFFF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Color">
+            <transform>
+              <offsetPosition x="0" y="0" z="0" />
+              <offsetRotation x="-0" y="270" z="0" />
+              <scale x="0.165" y="0.165" z="1" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetSecondLineColor">910000FF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Text">
+            <transform>
+              <offsetPosition x="-0.01" y="0" z="0" />
+              <offsetRotation x="-0" y="270" z="0" />
+              <scale x="0.1" y="0.1" z="1" />
+            </transform>
+            <textMesh fontName="">
+              <text formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetSecondLineName">5</text>
+            </textMesh>
+            <defaultStyle>
+              <color>FFFFFFFF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+      </children>
+      <children>
+        <self itemName="Third Line Group">
+          <transform>
+            <offsetPosition x="-0.01" y="0" z="0.279999971" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+          </transform>
+          <textMesh fontName="">
+            <text></text>
+          </textMesh>
+          <defaultStyle>
+            <color>FFFFFFFF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Color">
+            <transform>
+              <offsetPosition x="0" y="0" z="0" />
+              <offsetRotation x="-0" y="270" z="0" />
+              <scale x="0.165" y="0.165" z="1" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetThirdLineColor">910000FF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Text">
+            <transform>
+              <offsetPosition x="-0.01" y="0" z="0" />
+              <offsetRotation x="-0" y="270" z="0" />
+              <scale x="0.1" y="0.1" z="1" />
+            </transform>
+            <textMesh fontName="">
+              <text formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetThirdLineName">5</text>
+            </textMesh>
+            <defaultStyle>
+              <color>FFFFFFFF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+      </children>
+      <children>
+        <self itemName="Fourth Line Group">
+          <transform>
+            <offsetPosition x="-0.01" y="0" z="0.0899999738" />
+            <offsetRotation x="-0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+          </transform>
+          <textMesh fontName="">
+            <text></text>
+          </textMesh>
+          <defaultStyle>
+            <color>FFFFFFFF</color>
+            <emissiveColor>FFFFFFFF</emissiveColor>
+            <metallic>0</metallic>
+            <smoothness>0</smoothness>
+            <emissiveIntensity>0</emissiveIntensity>
+            <emissiveExposureWeight>0</emissiveExposureWeight>
+            <coatStrength>0</coatStrength>
+            <colorMask1>FFFFFF</colorMask1>
+            <colorMask2>FFFFFF</colorMask2>
+            <colorMask3>FFFFFF</colorMask3>
+          </defaultStyle>
+        </self>
+        <children>
+          <self itemName="Color">
+            <transform>
+              <offsetPosition x="0" y="0" z="0" />
+              <offsetRotation x="-0" y="270" z="0" />
+              <scale x="0.165" y="0.165" z="1" />
+            </transform>
+            <whiteMesh />
+            <defaultStyle>
+              <color formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetFourthLineColor">910000FF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+        <children>
+          <self itemName="Text">
+            <transform>
+              <offsetPosition x="-0.01" y="0" z="0" />
+              <offsetRotation x="-0" y="270" z="0" />
+              <scale x="0.1" y="0.1" z="1" />
+            </transform>
+            <textMesh fontName="">
+              <text formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetFourthLineName">5</text>
+            </textMesh>
+            <defaultStyle>
+              <color>FFFFFFFF</color>
+              <emissiveColor>FFFFFFFF</emissiveColor>
+              <metallic>0</metallic>
+              <smoothness>0</smoothness>
+              <emissiveIntensity>0</emissiveIntensity>
+              <emissiveExposureWeight>0</emissiveExposureWeight>
+              <coatStrength>0</coatStrength>
+              <colorMask1>FFFFFF</colorMask1>
+              <colorMask2>FFFFFF</colorMask2>
+              <colorMask3>FFFFFF</colorMask3>
+            </defaultStyle>
+          </self>
+        </children>
+      </children>
+    </children>
+    <children>
+      <self itemName="Entrance Name">
+        <transform>
+          <offsetPosition x="-0.01" y="-0.2" z="-1.2700001" />
+          <offsetRotation x="-0" y="270" z="0" />
+          <scale x="0.1" y="0.1" z="1" />
+        </transform>
+        <textMesh fontName="LedBoardFont">
+          <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetEntranceALocalizedName">NEW TEXT</text>
+        </textMesh>
+        <defaultStyle>
+          <color>000000FF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+  </children>
+</WELayout>

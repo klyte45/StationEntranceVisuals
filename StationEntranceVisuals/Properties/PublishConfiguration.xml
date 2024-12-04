@@ -1,5 +1,5 @@
 ﻿<Publish>
-	<ModId Value="94028" />
+	<ModId Value="95823" />
 	<DisplayName Value="Station Entrance Visuals" />
 	<ShortDescription Value="Automatically have train and subway lines information at your stations after installing this mod." />
 	<LongDescription>
@@ -43,12 +43,13 @@ I didn't add the visuals to a few stations that didn't have a place to display t
 	<Screenshot Value="ParadoxRes/Screenshot6.png" />
 	<Tag Value="Code Mod" />
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-	<ModVersion Value="1.1" />
+	<ModVersion Value="1.1.1" />
 	<GameVersion Value="1.1.*" />
 	<Dependency Id="92908" />
 	<Dependency Id="75426" />
 	<ChangeLog>
-# Release 1.1
+# Release 1.1.1
+- Added support for modern architecture stations.
 - Mod is now integrated with the new Write Everywhere bridge. This will help with a better integration and performance.
 If you find any issues, please report here.
 - Updated assets
