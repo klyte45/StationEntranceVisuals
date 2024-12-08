@@ -15,6 +15,12 @@
 	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
 	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
   <Target Name="RunModPostProcessor" AfterTargets="AfterBuild" Condition="False" />
+
+	<Import Project="$(SolutionDir)\_Build\belzont_public.targets" />
+
+	<PropertyGroup>
+		<IsBelzontCommonsMod>false</IsBelzontCommonsMod>
+	</PropertyGroup>
   
 	<ItemGroup>
 		<Reference Include="Game">

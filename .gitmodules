@@ -1,0 +1,3 @@
+[submodule "StationEntranceVisuals/CS2-BuildFiles"]
+	path = StationEntranceVisuals/CS2-BuildFiles
+	url = https://github.com/rodrigmatrix/CS2-BuildFiles
