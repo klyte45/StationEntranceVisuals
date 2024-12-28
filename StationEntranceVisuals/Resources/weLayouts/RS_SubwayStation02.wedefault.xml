@@ -101,7 +101,7 @@
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="1" y="1" z="1" />
         </transform>
-        <textMesh fontName="">
+        <textMesh fontName="HelveticaWorld_Regular">
           <text></text>
         </textMesh>
         <defaultStyle>
@@ -148,7 +148,7 @@
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="1" y="1" z="1" />
           </transform>
-          <textMesh fontName="">
+          <textMesh fontName="HelveticaWorld_Regular">
             <text></text>
           </textMesh>
           <defaultStyle>
@@ -193,7 +193,7 @@
               <offsetRotation x="-0" y="270" z="0" />
               <scale x="0.1" y="0.1" z="1" />
             </transform>
-            <textMesh fontName="">
+            <textMesh fontName="HelveticaWorld_Regular">
               <text formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetFirstLineName">5</text>
             </textMesh>
             <defaultStyle>
@@ -218,7 +218,7 @@
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="1" y="1" z="1" />
           </transform>
-          <textMesh fontName="">
+          <textMesh fontName="HelveticaWorld_Regular">
             <text></text>
           </textMesh>
           <defaultStyle>
@@ -263,7 +263,7 @@
               <offsetRotation x="-0" y="270" z="0" />
               <scale x="0.1" y="0.1" z="1" />
             </transform>
-            <textMesh fontName="">
+            <textMesh fontName="HelveticaWorld_Regular">
               <text formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetSecondLineName">5</text>
             </textMesh>
             <defaultStyle>
@@ -288,7 +288,7 @@
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="1" y="1" z="1" />
           </transform>
-          <textMesh fontName="">
+          <textMesh fontName="HelveticaWorld_Regular">
             <text></text>
           </textMesh>
           <defaultStyle>
@@ -333,7 +333,7 @@
               <offsetRotation x="-0" y="270" z="0" />
               <scale x="0.1" y="0.1" z="1" />
             </transform>
-            <textMesh fontName="">
+            <textMesh fontName="HelveticaWorld_Regular">
               <text formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetThirdLineName">5</text>
             </textMesh>
             <defaultStyle>
@@ -358,7 +358,7 @@
             <offsetRotation x="-0" y="0" z="0" />
             <scale x="1" y="1" z="1" />
           </transform>
-          <textMesh fontName="">
+          <textMesh fontName="HelveticaWorld_Regular">
             <text></text>
           </textMesh>
           <defaultStyle>
@@ -403,7 +403,7 @@
               <offsetRotation x="-0" y="270" z="0" />
               <scale x="0.1" y="0.1" z="1" />
             </transform>
-            <textMesh fontName="">
+            <textMesh fontName="HelveticaWorld_Regular">
               <text formulae="&amp;StationEntranceVisuals.Formulas.SubwayLines;GetFourthLineName">5</text>
             </textMesh>
             <defaultStyle>
@@ -429,7 +429,7 @@
           <offsetRotation x="-0" y="270" z="0" />
           <scale x="0.1" y="0.1" z="1" />
         </transform>
-        <textMesh fontName="LedBoardFont">
+        <textMesh fontName="HelveticaWorld_Regular">
           <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetEntranceALocalizedName">NEW TEXT</text>
         </textMesh>
         <defaultStyle>

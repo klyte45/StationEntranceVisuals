@@ -43,13 +43,13 @@ I didn't add the visuals to a few stations that didn't have a place to display t
   <Screenshot Value="ParadoxRes/Screenshot6.png" />
   <Tag Value="Code Mod" />
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-  <ModVersion Value="1.1.3" />
+  <ModVersion Value="1.1.4" />
   <GameVersion Value="1.*" />
   <Dependency Id="92908" />
   <Dependency Id="75426" />
   <ChangeLog>
-# Release 1.1.3
-- Fixed harmony issues
+# Release 1.1.4
+- Font change support. All the layouts now use the same font that can be replaced.
   </ChangeLog>
   <ExternalLink Type="kofi" Url="https://ko-fi.com/rodrigmatrix" />
   <ExternalLink Type="github" Url="https://github.com/rodrigmatrix/StationEntranceVisuals" />
