@@ -1,0 +1,15 @@
+<WELayout>
+  <children>
+    <self itemName="Decals 2">
+      <transform>
+        <offsetPosition x="75.73" y="3.10000038" z="88.22" />
+        <offsetRotation x="-0" y="-90" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="C"/>
+  </children>
+</WELayout>
