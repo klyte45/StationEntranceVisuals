@@ -1,0 +1,207 @@
+<WELayout>
+  <self itemName="New item">
+    <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+      <offsetPosition x="-4.51" y="17.9399986" z="0" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="2" y="1" z="1" />
+      <mustDraw>1</mustDraw>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <imageMesh atlas="main">
+      <image>StationSign</image>
+    </imageMesh>
+    <defaultStyle>
+      <color>FFFFFFFF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0.146225661</metallic>
+      <smoothness>0.3594714</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0.335100472</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+  <children>
+    <self itemName="Station Name">
+      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+        <offsetPosition x="-0" y="0.14" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.3" y="0.3" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="EurostileLTStd_Demi" maxWidthMeters="7">
+        <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetMainBuildingName">NEW TEXT</text>
+      </textMesh>
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0.261987627</metallic>
+        <smoothness>0.377749622</smoothness>
+        <emissiveIntensity formulae="&amp;StationEntranceVisuals.Formulas.EffectsUtils;GetEffectiveLuminance">0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0.188874811</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Metro Area">
+      <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+        <offsetPosition x="2.57" y="-0.340000033" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="2" y="0.2" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="">
+        <text></text>
+      </textMesh>
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Icon">
+        <transform pivot="MiddleCenter" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="0.729999959" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.25" y="0.25" z="0.01" />
+          <mustDraw formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">1</mustDraw>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <imageMesh atlas="MetroCompanyDecals">
+          <image>SquareLogo</image>
+        </imageMesh>
+        <decalStyle affectSmoothness="false" affectAO="false" affectEmission="false" drawOrder="0">
+          <color>000000FF</color>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+        </decalStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Lines">
+        <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+          <offsetPosition x="0.2800002" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.3" y="0.3" z="1" />
+          <mustDraw>1</mustDraw>
+          <arrayInstances x="5" y="1" z="1" />
+          <arraySpacing x="-0.35" y="0.35" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>LineIconCircled</layout>
+        </layoutMesh>
+      </self>
+    </children>
+    <variable key="lineType" value="Subway" />
+  </children>
+  <children>
+    <self itemName="Train Area">
+      <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.460000038" y="-0.340000033" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="2" y="0.2" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="">
+        <text></text>
+      </textMesh>
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Icon">
+        <transform pivot="MiddleCenter" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+          <offsetPosition x="0.729999959" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.25" y="0.25" z="0.01" />
+          <mustDraw formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">1</mustDraw>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <imageMesh atlas="TrainCompanyDecals">
+          <image>SquareLogo</image>
+        </imageMesh>
+        <decalStyle affectSmoothness="false" affectAO="false" affectEmission="false" drawOrder="0">
+          <color>000000FF</color>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+        </decalStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Lines">
+        <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+          <offsetPosition x="0.2800002" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.3" y="0.3" z="1" />
+          <mustDraw>1</mustDraw>
+          <arrayInstances x="5" y="1" z="1" />
+          <arraySpacing x="-0.35" y="0.35" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>LineIconCircled</layout>
+        </layoutMesh>
+      </self>
+    </children>
+    <variable key="lineType" value="Train" />
+  </children>
+  <children>
+    <self itemName="Entrance">
+      <transform pivot="MiddleRight" arrayAxisOrder="XYZ">
+        <offsetPosition x="-3.50999975" y="-0.34" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.2" y="0.2" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="EurostileLTStd_Demi">
+        <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetEntranceLocalizedName"></text>
+      </textMesh>
+      <defaultStyle>
+        <color>000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0.261987627</metallic>
+        <smoothness>0.377749622</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0.188874811</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+</WELayout>

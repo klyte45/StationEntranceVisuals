@@ -1,8 +1,9 @@
-﻿using System;
-using Colossal.Entities;
+﻿using Colossal.Entities;
 using Game.Common;
 using Game.SceneFlow;
 using Game.UI;
+using System;
+using System.Collections.Generic;
 using Unity.Entities;
 
 namespace StationEntranceVisuals.Formulas;
@@ -15,9 +16,12 @@ internal static class BuildingName
     private static readonly Func<Entity, string> GetMainBuildingNameBinding = (buildingRef) =>
     {
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
-        World.DefaultGameObjectInjectionWorld.EntityManager.TryGetComponent<Owner>(buildingRef, out var owner);
+        while (World.DefaultGameObjectInjectionWorld.EntityManager.TryGetComponent<Owner>(buildingRef, out var owner) && owner.m_Owner != Entity.Null)
+        {
+            buildingRef = owner.m_Owner;
+        }
 
-        return _nameSystem.GetRenderedLabelName(owner.m_Owner);
+        return _nameSystem.GetRenderedLabelName(buildingRef);
     };
 
     private static readonly Func<Entity, string> GetBuildingNameBinding = (buildingRef) =>
@@ -27,19 +31,14 @@ internal static class BuildingName
         return _nameSystem.GetRenderedLabelName(buildingRef);
     };
 
-    private static readonly Func<Entity, string> GetEntranceLocalizedNameBinding = (_) =>
+    private static string GetEntranceLocalizedName()
     {
-        GameManager.instance.localizationManager.activeDictionary.TryGetValue("StationEntranceVisuals.Entrance", out var result);
-        return result.Length > 0 ? result : "Entrance";
-    };
+        return GameManager.instance.localizationManager.activeDictionary.TryGetValue("StationEntranceVisuals.Entrance", out var result) && result.Length > 0 ? result : "Entrance";
+    }
 
     public static string GetBuildingName(Entity buildingRef) => GetBuildingNameBinding?.Invoke(buildingRef) ?? "<???>";
 
     public static string GetMainBuildingName(Entity buildingRef) => GetMainBuildingNameBinding?.Invoke(buildingRef) ?? "<???>";
-    
-    public static string GetEntranceALocalizedName(Entity buildingRef) => GetEntranceLocalizedNameBinding?.Invoke(buildingRef) + " A";
-    
-    public static string GetEntranceBLocalizedName(Entity buildingRef) => GetEntranceLocalizedNameBinding?.Invoke(buildingRef) + " B";
-    
-    public static string GetEntranceCLocalizedName(Entity buildingRef) => GetEntranceLocalizedNameBinding?.Invoke(buildingRef) + " C";
+
+    public static string GetEntranceLocalizedName(Entity buildingRef, Dictionary<string, string> vars) => $"{GetEntranceLocalizedName()} {(vars.TryGetValue("entrance#", out var entrance) ? entrance : "?")}";
 }
