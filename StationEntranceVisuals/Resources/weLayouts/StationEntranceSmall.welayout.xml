@@ -34,7 +34,7 @@
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="CommonFont" maxWidthMeters="3.7">
+      <textMesh fontName="StationName" maxWidthMeters="3.7">
         <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetMainBuildingName">NEW TEXT</text>
       </textMesh>
       <defaultStyle>

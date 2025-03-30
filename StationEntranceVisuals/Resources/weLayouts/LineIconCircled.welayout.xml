@@ -34,7 +34,7 @@
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="CommonFont" maxWidthMeters="0.22">
+      <textMesh fontName="LineIconFont" maxWidthMeters="0.22">
         <text formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineName">A1</text>
       </textMesh>
       <defaultStyle>

@@ -5,7 +5,7 @@
 		<TargetFramework>net472</TargetFramework>
     <LangVersion>12</LangVersion>
 		<Configurations>Debug;Release</Configurations>
-		
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
 		<!--The file where mod information which is required for publishing mod on PDX mods are stored-->
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
 		<AdditionalFilesDirectory>Resources</AdditionalFilesDirectory>

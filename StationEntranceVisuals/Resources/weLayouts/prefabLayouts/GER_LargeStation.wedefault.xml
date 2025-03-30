@@ -2,15 +2,14 @@
   <children>
     <self itemName="Decals 1">
       <transform>
-        <offsetPosition x="39.3000031" y="3.11000037" z="31.55" />
+        <offsetPosition x="0.08999823" y="7.210001" z="48.54" />
         <offsetRotation x="-0" y="0" z="0" />
         <scale x="0.15" y="0.15" z="1" />
       </transform>
       <layoutMesh>
-        <layout>StationEntranceSmall</layout>
+        <layout>StationEntranceMedium</layout>
       </layoutMesh>
     </self>
-    <variable key="entrance#" value="B"/>
-    <variable key="SUBBUILDING_ONLY" value=""/>
+    <variable key="entrance#" value="A"/>
   </children>
 </WELayout>

@@ -11,5 +11,6 @@
       </layoutMesh>
     </self>
     <variable key="entrance#" value="C"/>
+    <variable key="SUBBUILDING_ONLY" value=""/>
   </children>
 </WELayout>
