@@ -34,7 +34,7 @@
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="EurostileLTStd_Demi" maxWidthMeters="3.7">
+      <textMesh fontName="CommonFont" maxWidthMeters="3.7">
         <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetMainBuildingName">NEW TEXT</text>
       </textMesh>
       <defaultStyle>
@@ -104,7 +104,7 @@
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="EurostileLTStd_Demi">
+      <textMesh fontName="CommonFont">
         <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetEntranceLocalizedName"></text>
       </textMesh>
       <defaultStyle>
