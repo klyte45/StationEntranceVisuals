@@ -1,0 +1,92 @@
+<WELayout>
+  <children>
+    <self itemName="2">
+      <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+        <offsetPosition x="-43.85" y="3.22500014" z="4.525" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+  </children>
+  <children>
+    <self itemName="1">
+      <transform pivot="MiddleRight" arrayAxisOrder="XYZ">
+        <offsetPosition x="-4.175001" y="3.22500014" z="4.525" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+  </children>
+  <children>
+    <self itemName="3">
+      <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+        <offsetPosition x="-92" y="3.22500014" z="4.57500029" />
+        <offsetRotation x="-0" y="270" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+  </children>
+  <children>
+    <self itemName="5B">
+      <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+        <offsetPosition x="79.0069962" y="3.22500014" z="-12.0250034" />
+        <offsetRotation x="0" y="270" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+  </children>
+  <children>
+    <self itemName="4">
+      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+        <offsetPosition x="-92.06993" y="3.22500014" z="-12.0250034" />
+        <offsetRotation x="-0" y="224.999985" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+  </children>
+  <children>
+    <self itemName="5A">
+      <transform pivot="MiddleRight" arrayAxisOrder="XYZ">
+        <offsetPosition x="79.0099945" y="3.22500014" z="-12.0250034" />
+        <offsetRotation x="-0" y="90" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+  </children>
+</WELayout>
