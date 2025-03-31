@@ -10,6 +10,5 @@
         <layout>StationEntranceSmall</layout>
       </layoutMesh>
     </self>
-    <variable key="entrance#" value="A"/>
   </children>
 </WELayout>

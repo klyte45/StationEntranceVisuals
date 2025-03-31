@@ -95,7 +95,7 @@ public static class LinesUtils
     }
 
     private static LineDescriptor GetLine(Entity buildingRef, int index, string lineType, bool iterateToOwner, bool inverse)
-        => GetFilteredLinesList(buildingRef, lineType, iterateToOwner).OrderBy(t => inverse ? t.Number : -t.Number).ElementAtOrDefault(index);
+        => GetFilteredLinesList(buildingRef, lineType, iterateToOwner).OrderBy(t => inverse ? -t.Number : t.Number).ElementAtOrDefault(index);
 
     public static int GetLineCount(Entity buildingRef, Dictionary<string, string> vars)
         => vars.TryGetValue(LINETYPE_VAR, out var lineType) ? LinesUtils.GetFilteredLinesList(buildingRef, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR)).Count() : -1;
