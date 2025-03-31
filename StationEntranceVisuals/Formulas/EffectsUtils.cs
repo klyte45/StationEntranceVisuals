@@ -1,15 +1,15 @@
-﻿using Game.Effects;
+﻿using Game.Simulation;
 using Unity.Entities;
 
 namespace StationEntranceVisuals.Formulas;
 
 public static class EffectsUtils
 {
-    private static EffectFlagSystem effectFlagSystem;
+    private static PlanetarySystem planetarySystem;
 
     public static float GetEffectiveLuminance(Entity _)
     {
-        effectFlagSystem ??= World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<EffectFlagSystem>();
-            return effectFlagSystem.GetData().m_IsNightTime ? 7 : 0;
+        planetarySystem ??= World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<PlanetarySystem>();
+        return planetarySystem.NightLight.isValid && planetarySystem.NightLight.additionalData.intensity > .5f ? 7 : 0;
     }
 }

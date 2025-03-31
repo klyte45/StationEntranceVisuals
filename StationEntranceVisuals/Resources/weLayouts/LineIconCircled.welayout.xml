@@ -8,19 +8,19 @@
       <arrayInstances x="1" y="1" z="1" />
       <arraySpacing x="0" y="0" z="0" />
     </transform>
-    <imageMesh atlas="main">
+    <imageMesh atlas="StationEntranceVisuals:main">
       <image>LineBgCircle</image>
     </imageMesh>
     <defaultStyle>
       <color>FFFFFFFF</color>
-      <emissiveColor formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineColor">FFFFFFFF</emissiveColor>
+      <emissiveColor formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color">FFFFFFFF</emissiveColor>
       <metallic>0</metallic>
       <smoothness>0</smoothness>
       <emissiveIntensity formulae="&amp;StationEntranceVisuals.Formulas.EffectsUtils;GetEffectiveLuminance">3.04240346</emissiveIntensity>
       <emissiveExposureWeight>0</emissiveExposureWeight>
       <coatStrength>0</coatStrength>
-      <colorMask1 formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineColor">FFFFFF</colorMask1>
-      <colorMask2 formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFF</colorMask2>
+      <colorMask1 formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color">FFFFFF</colorMask1>
+      <colorMask2 formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFF</colorMask2>
       <colorMask3>FFFFFF</colorMask3>
     </defaultStyle>
   </self>
@@ -35,11 +35,11 @@
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <textMesh fontName="LineIconFont" maxWidthMeters="0.22">
-        <text formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineName">A1</text>
+        <text formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Acronym">A1</text>
       </textMesh>
       <defaultStyle>
-        <color formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
-        <emissiveColor formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineColor/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">626262FF</emissiveColor>
+        <color formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>
+        <emissiveColor formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">626262FF</emissiveColor>
         <metallic>0</metallic>
         <smoothness>0</smoothness>
         <emissiveIntensity formulae="&amp;StationEntranceVisuals.Formulas.EffectsUtils;GetEffectiveLuminance">15.5927734</emissiveIntensity>

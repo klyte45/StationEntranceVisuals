@@ -3,12 +3,13 @@ using Unity.Entities;
 
 namespace StationEntranceVisuals.Formulas;
 
-internal record struct LineDescriptor(
-    Entity LineEntity,
+public record struct LineDescriptor(
+    Entity Entity,
     TransportType TransportType,
     bool IsCargo,
     bool IsPassenger,
-    string LineNumber,
-    UnityEngine.Color LineColor)
+    string Acronym,
+    int Number,
+    UnityEngine.Color Color)
 {
 }

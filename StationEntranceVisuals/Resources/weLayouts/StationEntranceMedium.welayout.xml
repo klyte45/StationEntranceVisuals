@@ -1,14 +1,14 @@
 <WELayout>
   <self itemName="New item">
-    <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
-      <offsetPosition x="-4.51" y="17.9399986" z="0" />
+    <transform pivot="MiddleCenter" isAbsoluteScale="true" arrayAxisOrder="XYZ">
+      <offsetPosition x="-0.5100002" y="25.5899963" z="2.55" />
       <offsetRotation x="-0" y="0" z="0" />
-      <scale x="2" y="1" z="1" />
+      <scale x="6" y="1" z="1" />
       <mustDraw>1</mustDraw>
       <arrayInstances x="1" y="1" z="1" />
       <arraySpacing x="0" y="0" z="0" />
     </transform>
-    <imageMesh atlas="main">
+    <imageMesh atlas="StationEntranceVisuals:main">
       <image>StationSign</image>
     </imageMesh>
     <defaultStyle>
@@ -34,7 +34,7 @@
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="StationName" maxWidthMeters="7">
+      <textMesh fontName="StationName" maxWidthMeters="5.5">
         <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetMainBuildingName">NEW TEXT</text>
       </textMesh>
       <defaultStyle>
@@ -54,33 +54,31 @@
   <children>
     <self itemName="Metro Area">
       <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
-        <offsetPosition x="2.57" y="-0.340000033" z="0" />
+        <offsetPosition x="3" y="-0.335" z="0" />
         <offsetRotation x="-0" y="0" z="0" />
-        <scale x="2" y="0.2" z="1" />
+        <scale x="0" y="0" z="1" />
         <mustDraw>1</mustDraw>
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="">
-        <text></text>
-      </textMesh>
-      <defaultStyle>
-        <color>FFFFFFFF</color>
-        <emissiveColor>FFFFFFFF</emissiveColor>
+      <whiteMesh />
+      <defaultStyle decalFlags="0">
+        <color>00000000</color>
+        <emissiveColor>00000000</emissiveColor>
         <metallic>0</metallic>
         <smoothness>0</smoothness>
         <emissiveIntensity>0</emissiveIntensity>
         <emissiveExposureWeight>0</emissiveExposureWeight>
         <coatStrength>0</coatStrength>
-        <colorMask1>FFFFFF</colorMask1>
-        <colorMask2>FFFFFF</colorMask2>
-        <colorMask3>FFFFFF</colorMask3>
+        <colorMask1>000000</colorMask1>
+        <colorMask2>000000</colorMask2>
+        <colorMask3>000000</colorMask3>
       </defaultStyle>
     </self>
     <children>
       <self itemName="Icon">
         <transform pivot="MiddleCenter" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
-          <offsetPosition x="0.729999959" y="0" z="0" />
+          <offsetPosition x="-0.2" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0.25" y="0.25" z="0.01" />
           <mustDraw formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">1</mustDraw>
@@ -100,7 +98,7 @@
     <children>
       <self itemName="Lines">
         <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
-          <offsetPosition x="0.2800002" y="0" z="0" />
+          <offsetPosition x="-0.4" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0.3" y="0.3" z="1" />
           <mustDraw>1</mustDraw>
@@ -116,34 +114,32 @@
   </children>
   <children>
     <self itemName="Train Area">
-      <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
-        <offsetPosition x="0.460000038" y="-0.340000033" z="0" />
+      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.7000003" y="-0.340000033" z="0" />
         <offsetRotation x="-0" y="0" z="0" />
-        <scale x="2" y="0.2" z="1" />
+        <scale x="1E-05" y="1E-05" z="1" />
         <mustDraw>1</mustDraw>
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="">
-        <text></text>
-      </textMesh>
-      <defaultStyle>
-        <color>FFFFFFFF</color>
-        <emissiveColor>FFFFFFFF</emissiveColor>
+      <whiteMesh />
+      <defaultStyle decalFlags="0">
+        <color>00000000</color>
+        <emissiveColor>00000000</emissiveColor>
         <metallic>0</metallic>
         <smoothness>0</smoothness>
         <emissiveIntensity>0</emissiveIntensity>
         <emissiveExposureWeight>0</emissiveExposureWeight>
         <coatStrength>0</coatStrength>
-        <colorMask1>FFFFFF</colorMask1>
-        <colorMask2>FFFFFF</colorMask2>
-        <colorMask3>FFFFFF</colorMask3>
+        <colorMask1>000000</colorMask1>
+        <colorMask2>000000</colorMask2>
+        <colorMask3>000000</colorMask3>
       </defaultStyle>
     </self>
     <children>
       <self itemName="Icon">
         <transform pivot="MiddleCenter" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
-          <offsetPosition x="0.729999959" y="0" z="0" />
+          <offsetPosition x="-0.2" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0.25" y="0.25" z="0.01" />
           <mustDraw formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">1</mustDraw>
@@ -163,7 +159,7 @@
     <children>
       <self itemName="Lines">
         <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
-          <offsetPosition x="0.2800002" y="0" z="0" />
+          <offsetPosition x="-0.4" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0.3" y="0.3" z="1" />
           <mustDraw>1</mustDraw>
@@ -180,14 +176,14 @@
   <children>
     <self itemName="Entrance">
       <transform pivot="MiddleRight" arrayAxisOrder="XYZ">
-        <offsetPosition x="-3.50999975" y="-0.34" z="0" />
+        <offsetPosition x="-2.9" y="-0.34" z="0" />
         <offsetRotation x="-0" y="0" z="0" />
         <scale x="0.2" y="0.2" z="1" />
         <mustDraw>1</mustDraw>
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="CommonFont">
+      <textMesh fontName="CommonFont" maxWidthMeters="1.3">
         <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetEntranceLocalizedName"></text>
       </textMesh>
       <defaultStyle>

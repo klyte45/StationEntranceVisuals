@@ -15,7 +15,7 @@
   <children>
     <self itemName="Decals 2">
       <transform>
-        <offsetPosition x="-9.5" y="3.2" z="-0.5199994" />
+        <offsetPosition x="-9.45" y="3.2" z="-0.5199994" />
         <offsetRotation x="-0" y="90" z="0" />
         <scale x="0.15" y="0.15" z="1" />
       </transform>

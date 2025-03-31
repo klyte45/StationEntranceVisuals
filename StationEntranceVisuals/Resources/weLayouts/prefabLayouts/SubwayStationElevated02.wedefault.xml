@@ -58,7 +58,7 @@
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>StationEntranceMedium</layout>
+        <layout>StationEntranceLarge</layout>
       </layoutMesh>
     </self>
     <variable key="entrance#" value="D" />

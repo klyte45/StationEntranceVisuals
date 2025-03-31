@@ -17,6 +17,7 @@ namespace StationEntranceVisuals.Formulas;
 public static class LinesUtils
 {
     private const string SUBBUILDING_ONLY_VAR = "SUBBUILDING_ONLY";
+    private const string INVERSE_ORDER = "INVERSE_ORDER";
     private const string LINETYPE_VAR = "lineType";
     private const string CURRENT_INDEX_VAR = "$idx";
 
@@ -67,9 +68,10 @@ public static class LinesUtils
                     && entityManager.TryGetComponent<PrefabRef>(owner.m_Owner, out var prefabRef)
                     && entityManager.TryGetComponent<TransportLineData>(prefabRef.m_Prefab, out var lineData)
                     && entityManager.TryGetComponent<Game.Routes.Color>(owner.m_Owner, out var lineColor)
+                    && entityManager.TryGetComponent<Game.Routes.RouteNumber>(owner.m_Owner, out var lineNumber)
                     )
                 {
-                    lineNumberList.Add(new LineDescriptor(owner.m_Owner, lineData.m_TransportType, lineData.m_CargoTransport, lineData.m_PassengerTransport, WERouteFn.GetTransportLineNumber(owner.m_Owner), lineColor.m_Color));
+                    lineNumberList.Add(new LineDescriptor(owner.m_Owner, lineData.m_TransportType, lineData.m_CargoTransport, lineData.m_PassengerTransport, WERouteFn.GetTransportLineNumber(owner.m_Owner), lineNumber.m_Number, lineColor.m_Color));
                 }
             }
         }
@@ -92,9 +94,8 @@ public static class LinesUtils
             : lineNumberList;
     }
 
-    private static LineDescriptor GetLine(Entity buildingRef, int index, string lineType, bool iterateToOwner)
-        => GetFilteredLinesList(buildingRef, lineType, iterateToOwner).OrderBy(t => t.LineNumber).ElementAtOrDefault(index);
-
+    private static LineDescriptor GetLine(Entity buildingRef, int index, string lineType, bool iterateToOwner, bool inverse)
+        => GetFilteredLinesList(buildingRef, lineType, iterateToOwner).OrderBy(t => inverse ? t.Number : -t.Number).ElementAtOrDefault(index);
 
     public static int GetLineCount(Entity buildingRef, Dictionary<string, string> vars)
         => vars.TryGetValue(LINETYPE_VAR, out var lineType) ? LinesUtils.GetFilteredLinesList(buildingRef, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR)).Count() : -1;
@@ -103,8 +104,8 @@ public static class LinesUtils
             ? GetFilteredLinesList(buildingRef, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR)).Count - idx
             : -1;
 
-    public static UnityEngine.Color GetLineColor(Entity buildingRef, Dictionary<string, string> vars)
-        => vars.TryGetValue(CURRENT_INDEX_VAR, out var idxStr) && int.TryParse(idxStr, out int idx) && vars.TryGetValue(LINETYPE_VAR, out var lineType) ? LinesUtils.GetLine(buildingRef, idx, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR)).LineColor : UnityEngine.Color.clear;
-    public static string GetLineName(Entity buildingRef, Dictionary<string, string> vars)
-        => vars.TryGetValue(CURRENT_INDEX_VAR, out var idxStr) && int.TryParse(idxStr, out int idx) && vars.TryGetValue(LINETYPE_VAR, out var lineType) ? LinesUtils.GetLine(buildingRef, idx, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR)).LineNumber : string.Empty;
+    public static LineDescriptor GetLineData(Entity buildingRef, Dictionary<string, string> vars)
+        => vars.TryGetValue(CURRENT_INDEX_VAR, out var idxStr) && int.TryParse(idxStr, out int idx) && vars.TryGetValue(LINETYPE_VAR, out var lineType)
+        ? LinesUtils.GetLine(buildingRef, idx, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR), vars.ContainsKey(INVERSE_ORDER))
+        : default;
 }
