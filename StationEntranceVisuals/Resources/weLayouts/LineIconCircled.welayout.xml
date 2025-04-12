@@ -4,8 +4,8 @@
       <offsetPosition x="-7.15255737E-07" y="6.99" z="-13.34" />
       <offsetRotation x="-0" y="270" z="0" />
       <scale x="0.3" y="0.3" z="1" />
-      <mustDraw formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;WillShowNthLine">1</mustDraw>
       <arrayInstances x="1" y="1" z="1" />
+      <mustDraw>1</mustDraw>
       <arraySpacing x="0" y="0" z="0" />
     </transform>
     <imageMesh atlas="StationEntranceVisuals:main">
@@ -16,7 +16,7 @@
       <emissiveColor formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color">FFFFFFFF</emissiveColor>
       <metallic>0</metallic>
       <smoothness>0</smoothness>
-      <emissiveIntensity formulae="&amp;StationEntranceVisuals.Formulas.EffectsUtils;GetEffectiveLuminance">3.04240346</emissiveIntensity>
+      <emissiveIntensity formulae="&amp;BelzontWE.Builtin.WEEffectsFn;GetNightLight01.*7">3.04240346</emissiveIntensity>
       <emissiveExposureWeight>0</emissiveExposureWeight>
       <coatStrength>0</coatStrength>
       <colorMask1 formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color">FFFFFF</colorMask1>
@@ -42,7 +42,7 @@
         <emissiveColor formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">626262FF</emissiveColor>
         <metallic>0</metallic>
         <smoothness>0</smoothness>
-        <emissiveIntensity formulae="&amp;StationEntranceVisuals.Formulas.EffectsUtils;GetEffectiveLuminance">15.5927734</emissiveIntensity>
+        <emissiveIntensity formulae="&amp;BelzontWE.Builtin.WEEffectsFn;GetNightLight01.*7">15.5927734</emissiveIntensity>
         <emissiveExposureWeight>0</emissiveExposureWeight>
         <coatStrength>0</coatStrength>
         <colorMask1>FFFFFF</colorMask1>

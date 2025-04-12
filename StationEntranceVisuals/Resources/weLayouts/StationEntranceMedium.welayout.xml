@@ -42,7 +42,7 @@
         <emissiveColor>FFFFFFFF</emissiveColor>
         <metallic>0.261987627</metallic>
         <smoothness>0.377749622</smoothness>
-        <emissiveIntensity formulae="&amp;StationEntranceVisuals.Formulas.EffectsUtils;GetEffectiveLuminance">0</emissiveIntensity>
+        <emissiveIntensity formulae="&amp;BelzontWE.Builtin.WEEffectsFn;GetNightLight01.*7">0</emissiveIntensity>
         <emissiveExposureWeight>0</emissiveExposureWeight>
         <coatStrength>0.188874811</coatStrength>
         <colorMask1>FFFFFF</colorMask1>
@@ -102,6 +102,7 @@
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0.3" y="0.3" z="1" />
           <mustDraw>1</mustDraw>
+          <instanceCount formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">-1</instanceCount>
           <arrayInstances x="5" y="1" z="1" />
           <arraySpacing x="-0.35" y="0.35" z="0" />
         </transform>
@@ -163,6 +164,7 @@
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0.3" y="0.3" z="1" />
           <mustDraw>1</mustDraw>
+          <instanceCount formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">-1</instanceCount>
           <arrayInstances x="5" y="1" z="1" />
           <arraySpacing x="-0.35" y="0.35" z="0" />
         </transform>
