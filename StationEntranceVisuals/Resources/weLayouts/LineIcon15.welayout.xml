@@ -1,15 +1,15 @@
 <WELayout>
   <self itemName="BG">
-    <transform pivot="MiddleRight" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+    <transform pivot="MiddleRight" alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
       <offsetPosition x="-7.15255737E-07" y="6.99" z="-13.34" />
       <offsetRotation x="-0" y="270" z="0" />
-      <scale x="0.3" y="0.3" z="1" />
-      <arrayInstances x="1" y="1" z="1" />
+      <scale x="0.15" y="0.15" z="1" />
       <mustDraw>1</mustDraw>
+      <arrayInstances x="1" y="1" z="1" />
       <arraySpacing x="0" y="0" z="0" />
     </transform>
     <imageMesh atlas="StationEntranceVisuals:main">
-      <image>LineBgCircle</image>
+      <image formulae="&amp;StationEntranceVisuals.Formulas.DisplaySettings;GetShapeIcon">LineBgSquare</image>
     </imageMesh>
     <defaultStyle>
       <color>FFFFFFFF</color>
@@ -26,16 +26,17 @@
   </self>
   <children>
     <self itemName="ID">
-      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
         <offsetPosition x="0" y="0" z="0" />
         <offsetRotation x="-0" y="0" z="0" />
-        <scale x="0.15" y="0.15" z="1" />
+        <scale x="0.11" y="0.11" z="1" />
         <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
-      <textMesh fontName="LineIconFont" maxWidthMeters="0.22">
-        <text formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Acronym">A1</text>
+      <textMesh fontName="LineIconFont" maxWidthMeters="0.13">
+        <text formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.GetDisplayName">A1 121 21</text>
       </textMesh>
       <defaultStyle>
         <color formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineData.Color/&amp;BelzontWE.Builtin.WEColorsFn;GetContrastColor">FFFFFFFF</color>

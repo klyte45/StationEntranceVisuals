@@ -1,28 +1,81 @@
 <WELayout>
   <children>
-    <self itemName="Decals 1">
-      <transform>
-        <offsetPosition x="0.0400004163" y="3.12999964" z="16.44" />
-        <offsetRotation x="-0" y="0" z="0" />
-        <scale x="0.15" y="0.15" z="1" />
+    <self itemName="New item">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="2.60200143" y="3.721" z="17.531002" />
+        <offsetRotation x="-0" y="90" z="0" />
+        <scale x="3.60796928" y="0.55625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>StationEntranceSmall</layout>
+        <layout>VanillaUnderground</layout>
       </layoutMesh>
     </self>
-    <variable key="entrance#" value="A"/>
+    <variable key="entrance#" value="A" />
   </children>
   <children>
-    <self itemName="Decals 2">
-      <transform>
-        <offsetPosition x="-0.140000373" y="3.8" z="3.41999912" />
-        <offsetRotation x="-0" y="-90" z="0" />
-        <scale x="0.15" y="0.15" z="1" />
+    <self itemName="New item">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="0.157001331" y="3.14699984" z="16.4100037" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="3.60796928" y="0.55625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>StationEntranceSmall</layout>
+        <layout>VanillaUnderground</layout>
       </layoutMesh>
     </self>
-    <variable key="entrance#" value="B"/>
+    <variable key="entrance#" value="A" />
+  </children>
+  <children>
+    <self itemName="Entrance B">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-0.136998728" y="3.48399973" z="3.402003" />
+        <offsetRotation x="-0" y="270" z="0" />
+        <scale x="3.60796928" y="0.55625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>VanillaUnderground</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="B" />
+  </children>
+  <children>
+    <self itemName="New item">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-0.138999939" y="3.29600048" z="2.499" />
+        <offsetRotation x="-0" y="270" z="0" />
+        <scale x="0.137968749" y="0.137968749" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <imageMesh atlas="StationEntranceVisuals:main">
+        <image>Wheelchair</image>
+      </imageMesh>
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
   </children>
 </WELayout>
