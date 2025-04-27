@@ -12,19 +12,25 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Colossal.IO.AssetDatabase;
 
 namespace StationEntranceVisuals
 {
     public class Mod : IMod
     {
         public static ILog log = LogManager.GetLogger($"{nameof(StationEntranceVisuals)}.{nameof(Mod)}").SetShowsErrorsInUI(false);
-
+        public static Settings m_Setting;
+        
         public void OnLoad(UpdateSystem updateSystem)
         {
             log.Info(nameof(OnLoad));
 
             if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
                 log.Info($"Current mod asset at {asset.path}");
+            m_Setting = new Settings(this);
+            m_Setting.RegisterInOptionsUI();
+            GameManager.instance.localizationManager.AddSource("en-US", new LocaleEn(m_Setting));
+            AssetDatabase.global.LoadSettings(nameof(StationEntranceVisuals), m_Setting, new Settings(this));
 
             var bw = new BackgroundWorker();
             bw.DoWork += DeleteOldFiles;

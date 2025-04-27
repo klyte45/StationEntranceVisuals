@@ -40,5 +40,18 @@ internal static class BuildingName
 
     public static string GetMainBuildingName(Entity buildingRef) => GetMainBuildingNameBinding?.Invoke(buildingRef) ?? "<???>";
 
-    public static string GetEntranceLocalizedName(Entity buildingRef, Dictionary<string, string> vars) => vars.TryGetValue("entrance#", out var entrance) ? $"{GetEntranceLocalizedName()} {entrance}" : "";
+    public static string GetEntranceLocalizedName(Entity buildingRef, Dictionary<string, string> vars)
+    {
+        if (vars.TryGetValue("entrance#", out var entrance))
+        {
+            return $"{GetEntranceLocalizedName()} {entrance}";
+        }
+
+        if (vars.TryGetValue("subBuilding", out _))
+        {
+            return GetBuildingName(buildingRef);
+        }
+
+        return "";
+    }
 }

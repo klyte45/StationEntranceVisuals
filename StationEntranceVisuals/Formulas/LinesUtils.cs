@@ -3,13 +3,16 @@ using Colossal.IO.AssetDatabase.Internal;
 using Game.Buildings;
 using Game.Common;
 using Game.Prefabs;
-using Game.Routes;
 using StationEntranceVisuals.BridgeWE;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Game.Routes;
+using Game.UI;
+using StationEntranceVisuals.Utils;
 using Unity.Entities;
 using UnityEngine;
+using Color = UnityEngine.Color;
 using SubObject = Game.Objects.SubObject;
 
 namespace StationEntranceVisuals.Formulas;
@@ -18,8 +21,10 @@ public static class LinesUtils
 {
     private const string SUBBUILDING_ONLY_VAR = "SUBBUILDING_ONLY";
     private const string INVERSE_ORDER = "INVERSE_ORDER";
-    private const string LINETYPE_VAR = "lineType";
+    internal const string LINETYPE_VAR = "lineType";
     private const string CURRENT_INDEX_VAR = "$idx";
+    
+    private static NameSystem _nameSystem;
 
     private static readonly Dictionary<Entity, (HashSet<LineDescriptor> desc, int frameCalcuated)> m_cacheData = [];
 
@@ -68,18 +73,40 @@ public static class LinesUtils
                     && entityManager.TryGetComponent<PrefabRef>(owner.m_Owner, out var prefabRef)
                     && entityManager.TryGetComponent<TransportLineData>(prefabRef.m_Prefab, out var lineData)
                     && entityManager.TryGetComponent<Game.Routes.Color>(owner.m_Owner, out var lineColor)
-                    && entityManager.TryGetComponent<Game.Routes.RouteNumber>(owner.m_Owner, out var lineNumber)
+                    && entityManager.TryGetComponent<RouteNumber>(owner.m_Owner, out var lineNumber)
                     )
                 {
-                    lineNumberList.Add(new LineDescriptor(owner.m_Owner, lineData.m_TransportType, lineData.m_CargoTransport, lineData.m_PassengerTransport, WERouteFn.GetTransportLineNumber(owner.m_Owner), lineNumber.m_Number, lineColor.m_Color));
+                    lineNumberList.Add(
+                        new LineDescriptor(
+                            owner.m_Owner,
+                            lineData.m_TransportType,
+                            lineData.m_CargoTransport,
+                            lineData.m_PassengerTransport, 
+                            WERouteFn.GetTransportLineNumber(owner.m_Owner),
+                            lineNumber.m_Number,
+                            GetSmallLineName(owner, lineNumber),
+                            lineColor.m_Color
+                        )
+                    );
                 }
             }
         }
     }
 
+    private static string GetSmallLineName(Owner owner, RouteNumber routeNumber)
+    {
+        var lineName = _nameSystem.GetRenderedLabelName(owner.m_Owner).Split(' ').LastOrDefault();
+        return lineName is { Length: >= 1 and <= 3 } ? lineName : routeNumber.m_Number.ToString();
+    }
+
     internal static HashSet<LineDescriptor> GetFilteredLinesList(Entity buildingRef, string lineType, bool iterateToOwner)
     {
+        if (Mod.m_Setting.EnableLayoutValidation)
+        {
+            return MockLineUtils.GetMockLineDescriptors(buildingRef, lineType);
+        }
         var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
+        _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
         var lineNumberList = GetLines(entityManager, buildingRef, iterateToOwner);
 
         var lineTypes = lineType.Split(',')
@@ -95,10 +122,18 @@ public static class LinesUtils
     }
 
     private static LineDescriptor GetLine(Entity buildingRef, int index, string lineType, bool iterateToOwner, bool inverse)
-        => GetFilteredLinesList(buildingRef, lineType, iterateToOwner).OrderBy(t => inverse ? -t.Number : t.Number).ElementAtOrDefault(index);
+    {
+        var filteredLine = GetFilteredLinesList(buildingRef, lineType, iterateToOwner);
+        if (inverse)
+        {
+            return filteredLine.OrderByDescending(t => t.GetOrderingIndex()).ElementAtOrDefault(index);
+        }
+
+        return filteredLine.OrderBy(t => t.GetOrderingIndex()).ElementAtOrDefault(index);
+    }
 
     public static int GetLineCount(Entity buildingRef, Dictionary<string, string> vars)
-        => vars.TryGetValue(LINETYPE_VAR, out var lineType) ? LinesUtils.GetFilteredLinesList(buildingRef, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR)).Count() : -1;
+        => vars.TryGetValue(LINETYPE_VAR, out var lineType) ? GetFilteredLinesList(buildingRef, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR)).Count : -1;
     public static int WillShowNthLine(Entity buildingRef, Dictionary<string, string> vars)
         => vars.TryGetValue(CURRENT_INDEX_VAR, out var idxStr) && int.TryParse(idxStr, out int idx) && vars.TryGetValue(LINETYPE_VAR, out var lineType)
             ? GetFilteredLinesList(buildingRef, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR)).Count - idx
@@ -106,6 +141,6 @@ public static class LinesUtils
 
     public static LineDescriptor GetLineData(Entity buildingRef, Dictionary<string, string> vars)
         => vars.TryGetValue(CURRENT_INDEX_VAR, out var idxStr) && int.TryParse(idxStr, out int idx) && vars.TryGetValue(LINETYPE_VAR, out var lineType)
-        ? LinesUtils.GetLine(buildingRef, idx, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR), vars.ContainsKey(INVERSE_ORDER))
+        ? GetLine(buildingRef, idx, lineType, !vars.ContainsKey(SUBBUILDING_ONLY_VAR), vars.ContainsKey(INVERSE_ORDER))
         : default;
 }

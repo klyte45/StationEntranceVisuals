@@ -1,0 +1,38 @@
+<WELayout>
+  <children>
+    <self itemName="Decals 1">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="7.768001" y="3.445" z="1.33899975" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>VanillaUnderground</layout>
+      </layoutMesh>
+    </self>
+    <variable key="subBuilding" />
+    <variable key="wheelchair" />
+  </children>
+  <children>
+    <self itemName="Decals 2">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-3.50700045" y="2.874" z="-3.907001" />
+        <offsetRotation x="-0" y="180" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>VanillaUnderground</layout>
+      </layoutMesh>
+    </self>
+    <variable key="subBuilding" />
+    <variable key="wheelchair" />
+  </children>
+</WELayout>

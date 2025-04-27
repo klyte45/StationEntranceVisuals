@@ -1,10 +1,11 @@
 <WELayout>
   <self itemName="New item">
-    <transform pivot="MiddleCenter" isAbsoluteScale="true" arrayAxisOrder="XYZ">
-      <offsetPosition x="-17.23" y="25.41" z="0" />
+    <transform alignment="Left" isAbsoluteScale="true" arrayAxisOrder="XYZ">
+      <offsetPosition x="-3.07599831" y="5.28700066" z="0" />
       <offsetRotation x="-0" y="0" z="0" />
       <scale x="3" y="1" z="1" />
       <mustDraw>1</mustDraw>
+      <instanceCount>-1</instanceCount>
       <arrayInstances x="1" y="1" z="1" />
       <arraySpacing x="0" y="0" z="0" />
     </transform>
@@ -26,11 +27,12 @@
   </self>
   <children>
     <self itemName="Station Name">
-      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
         <offsetPosition x="-0" y="0.14" z="0" />
         <offsetRotation x="-0" y="0" z="0" />
         <scale x="0.225" y="0.225" z="1" />
         <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
@@ -53,11 +55,12 @@
   </children>
   <children>
     <self itemName="Lines Area">
-      <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
-        <offsetPosition x="1.45" y="-0.335" z="0" />
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="1.79900014" y="-0.335" z="0" />
         <offsetRotation x="-0" y="0" z="0" />
         <scale x="0" y="0" z="0" />
         <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
@@ -77,29 +80,85 @@
     </self>
     <children>
       <self itemName="Lines">
-        <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
-          <offsetPosition x="0" y="0" z="0" />
+        <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="-0.840000033" y="0" z="0" />
           <offsetRotation x="-0" y="0" z="0" />
           <scale x="0.3" y="0.3" z="1" />
           <mustDraw>1</mustDraw>
           <instanceCount formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">-1</instanceCount>
-          <arrayInstances x="6" y="1" z="1" />
+          <arrayInstances x="4" y="1" z="1" />
           <arraySpacing x="-0.35" y="0.35" z="0" />
         </transform>
         <layoutMesh>
-          <layout>LineIconCircled</layout>
+          <layout>LineIcon</layout>
         </layoutMesh>
       </self>
     </children>
-    <variable key="lineType" />
+    <children>
+      <self itemName="Subway Operator Icon">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="-0.659999967" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.25" y="0.25" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <imageMesh atlas="StationEntranceVisuals:MetroCompanyDecals">
+          <image formulae="&amp;StationEntranceVisuals.Formulas.DisplaySettings;GetSubwayOperatorIcon">NEW TEXT</image>
+        </imageMesh>
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
+    <children>
+      <self itemName="Train Operator Icon">
+        <transform alignment="Left" arrayAxisOrder="XYZ">
+          <offsetPosition x="-0.659999967" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.25" y="0.25" z="1" />
+          <mustDraw formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">1</mustDraw>
+          <instanceCount>-1</instanceCount>
+          <arrayInstances x="1" y="1" z="1" />
+          <arraySpacing x="0" y="0" z="0" />
+        </transform>
+        <imageMesh atlas="StationEntranceVisuals:TrainCompanyDecals">
+          <image formulae="&amp;StationEntranceVisuals.Formulas.DisplaySettings;GetTrainOperatorIcon">NEW TEXT</image>
+        </imageMesh>
+        <defaultStyle>
+          <color>FFFFFFFF</color>
+          <emissiveColor>FFFFFFFF</emissiveColor>
+          <metallic>0</metallic>
+          <smoothness>0</smoothness>
+          <emissiveIntensity>0</emissiveIntensity>
+          <emissiveExposureWeight>0</emissiveExposureWeight>
+          <coatStrength>0</coatStrength>
+          <colorMask1>FFFFFF</colorMask1>
+          <colorMask2>FFFFFF</colorMask2>
+          <colorMask3>FFFFFF</colorMask3>
+        </defaultStyle>
+      </self>
+    </children>
   </children>
   <children>
     <self itemName="Entrance">
-      <transform pivot="MiddleRight" arrayAxisOrder="XYZ">
+      <transform pivot="MiddleRight" alignment="Left" arrayAxisOrder="XYZ">
         <offsetPosition x="-1.45" y="-0.335" z="0" />
         <offsetRotation x="-0" y="0" z="0" />
         <scale x="0.12" y="0.12" z="1" />
         <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
         <arrayInstances x="1" y="1" z="1" />
         <arraySpacing x="0" y="0" z="0" />
       </transform>
@@ -120,4 +179,33 @@
       </defaultStyle>
     </self>
   </children>
+  <children>
+    <self itemName="Wheelchair Icon">
+      <transform alignment="Left" useFormulaeToCheckIfDraw="true" arrayAxisOrder="XYZ">
+        <offsetPosition x="-0.5899999" y="-0.335" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.28" y="0.28" z="1" />
+        <mustDraw formulae="&amp;StationEntranceVisuals.Formulas.DisplaySettings;ShowWheelchairIcon">1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <imageMesh atlas="StationEntranceVisuals:main">
+        <image formulae="&amp;StationEntranceVisuals.Formulas.DisplaySettings;GetWheelchairIcon">NEW TEXT</image>
+      </imageMesh>
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <variable key="lineType" />
 </WELayout>
