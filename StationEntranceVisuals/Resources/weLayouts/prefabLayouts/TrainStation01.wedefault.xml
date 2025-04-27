@@ -1,0 +1,27 @@
+<WELayout>
+  <children>
+    <self itemName="Main Entrance">
+      <transform>
+        <offsetPosition x="1.22" y="5.230001" z="31.9399986" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceLarge</layout>
+      </layoutMesh>
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+    <variable key="entrance#" value="A"/>
+  </children>
+</WELayout>

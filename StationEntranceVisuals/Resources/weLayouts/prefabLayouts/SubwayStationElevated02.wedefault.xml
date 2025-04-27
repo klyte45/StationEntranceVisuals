@@ -1,0 +1,66 @@
+<WELayout>
+  <children>
+    <self itemName="Decals 1">
+      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+        <offsetPosition x="24.470005" y="3.48999953" z="18.9900017" />
+        <offsetRotation x="-0" y="90" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+        <mustDraw>0</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="A" />
+  </children>
+  <children>
+    <self itemName="Decals 2">
+      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+        <offsetPosition x="-18.8224926" y="3.48999953" z="18.6963978" />
+        <offsetRotation x="0" y="305" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+        <mustDraw>0</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="B" />
+  </children>
+  <children>
+    <self itemName="Decals 3">
+      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+        <offsetPosition x="-23.17361" y="3.47999954" z="14.8184433" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+        <mustDraw>0</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceSmall</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="C" />
+  </children>
+  <children>
+    <self itemName="Decals 4">
+      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+        <offsetPosition x="-4.09957838" y="3.48999953" z="-24.8105259" />
+        <offsetRotation x="-0" y="180" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+        <mustDraw>0</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceLarge</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="D" />
+  </children>
+</WELayout>

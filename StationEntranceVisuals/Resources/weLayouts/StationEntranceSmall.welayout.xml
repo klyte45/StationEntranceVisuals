@@ -1,0 +1,123 @@
+<WELayout>
+  <self itemName="New item">
+    <transform pivot="MiddleCenter" isAbsoluteScale="true" arrayAxisOrder="XYZ">
+      <offsetPosition x="-17.23" y="25.41" z="0" />
+      <offsetRotation x="-0" y="0" z="0" />
+      <scale x="3" y="1" z="1" />
+      <mustDraw>1</mustDraw>
+      <arrayInstances x="1" y="1" z="1" />
+      <arraySpacing x="0" y="0" z="0" />
+    </transform>
+    <imageMesh atlas="StationEntranceVisuals:main">
+      <image>StationSign</image>
+    </imageMesh>
+    <defaultStyle>
+      <color>FFFFFFFF</color>
+      <emissiveColor>FFFFFFFF</emissiveColor>
+      <metallic>0.146225661</metallic>
+      <smoothness>0.3594714</smoothness>
+      <emissiveIntensity>0</emissiveIntensity>
+      <emissiveExposureWeight>0</emissiveExposureWeight>
+      <coatStrength>0.335100472</coatStrength>
+      <colorMask1>FFFFFF</colorMask1>
+      <colorMask2>FFFFFF</colorMask2>
+      <colorMask3>FFFFFF</colorMask3>
+    </defaultStyle>
+  </self>
+  <children>
+    <self itemName="Station Name">
+      <transform pivot="MiddleCenter" arrayAxisOrder="XYZ">
+        <offsetPosition x="-0" y="0.14" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.225" y="0.225" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="StationName" maxWidthMeters="2.8">
+        <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetMainBuildingName">NEW TEXT</text>
+      </textMesh>
+      <defaultStyle>
+        <color>FFFFFFFF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0.261987627</metallic>
+        <smoothness>0.377749622</smoothness>
+        <emissiveIntensity formulae="&amp;BelzontWE.Builtin.WEEffectsFn;GetNightLight01.*7">0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0.188874811</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+  <children>
+    <self itemName="Lines Area">
+      <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+        <offsetPosition x="1.45" y="-0.335" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0" y="0" z="0" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <whiteMesh />
+      <defaultStyle decalFlags="0">
+        <color>00000000</color>
+        <emissiveColor>00000000</emissiveColor>
+        <metallic>0</metallic>
+        <smoothness>0</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0</coatStrength>
+        <colorMask1>000000</colorMask1>
+        <colorMask2>000000</colorMask2>
+        <colorMask3>000000</colorMask3>
+      </defaultStyle>
+    </self>
+    <children>
+      <self itemName="Lines">
+        <transform pivot="MiddleLeft" arrayAxisOrder="XYZ">
+          <offsetPosition x="0" y="0" z="0" />
+          <offsetRotation x="-0" y="0" z="0" />
+          <scale x="0.3" y="0.3" z="1" />
+          <mustDraw>1</mustDraw>
+          <instanceCount formulae="&amp;StationEntranceVisuals.Formulas.LinesUtils;GetLineCount">-1</instanceCount>
+          <arrayInstances x="6" y="1" z="1" />
+          <arraySpacing x="-0.35" y="0.35" z="0" />
+        </transform>
+        <layoutMesh>
+          <layout>LineIconCircled</layout>
+        </layoutMesh>
+      </self>
+    </children>
+    <variable key="lineType" />
+  </children>
+  <children>
+    <self itemName="Entrance">
+      <transform pivot="MiddleRight" arrayAxisOrder="XYZ">
+        <offsetPosition x="-1.45" y="-0.335" z="0" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.12" y="0.12" z="1" />
+        <mustDraw>1</mustDraw>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <textMesh fontName="CommonFont" maxWidthMeters="0.7">
+        <text formulae="&amp;StationEntranceVisuals.Formulas.BuildingName;GetEntranceLocalizedName"></text>
+      </textMesh>
+      <defaultStyle>
+        <color>000000FF</color>
+        <emissiveColor>FFFFFFFF</emissiveColor>
+        <metallic>0.261987627</metallic>
+        <smoothness>0.377749622</smoothness>
+        <emissiveIntensity>0</emissiveIntensity>
+        <emissiveExposureWeight>0</emissiveExposureWeight>
+        <coatStrength>0.188874811</coatStrength>
+        <colorMask1>FFFFFF</colorMask1>
+        <colorMask2>FFFFFF</colorMask2>
+        <colorMask3>FFFFFF</colorMask3>
+      </defaultStyle>
+    </self>
+  </children>
+</WELayout>
