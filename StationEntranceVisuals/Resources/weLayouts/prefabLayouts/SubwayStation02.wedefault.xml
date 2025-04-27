@@ -11,6 +11,7 @@
       </layoutMesh>
     </self>
     <variable key="entrance#" value="A"/>
+    <variable key="wheelchair" />
   </children>
   <children>
     <self itemName="Decals 2">
@@ -24,6 +25,7 @@
       </layoutMesh>
     </self>
     <variable key="entrance#" value="B"/>
+    <variable key="wheelchair" />
   </children>
   <children>
     <self itemName="Decals 3">
@@ -37,5 +39,6 @@
       </layoutMesh>
     </self>
     <variable key="entrance#" value="C"/>
+    <variable key="wheelchair" />
   </children>
 </WELayout>
