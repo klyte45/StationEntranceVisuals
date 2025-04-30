@@ -1,0 +1,20 @@
+<WELayout>
+  <children>
+    <self itemName="Decals 1">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="-7.884983" y="7.45" z="116.279007" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="0.15" y="0.15" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceLarge</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="A" />
+    <variable key="wheelchair" />
+  </children>
+</WELayout>

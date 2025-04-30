@@ -1,0 +1,53 @@
+<WELayout>
+  <children>
+    <self itemName="Entrance B">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="4.133001" y="3.14999986" z="-1.00400078" />
+        <offsetRotation x="-0" y="90" z="0" />
+        <scale x="3.60796928" y="0.55625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>VanillaUnderground</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="B" />
+  </children>
+  <children>
+    <self itemName="Entrance A">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="4.13300133" y="3.14999986" z="-16.0280018" />
+        <offsetRotation x="-0" y="90" z="0" />
+        <scale x="3.60796928" y="0.55625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>VanillaUnderground</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="A" />
+  </children>
+  <children>
+    <self itemName="New item">
+      <transform alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="4.133001" y="3.14999986" z="12.977" />
+        <offsetRotation x="-0" y="90" z="0" />
+        <scale x="3.60796928" y="0.55625" z="1" />
+        <mustDraw>0</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>VanillaUnderground</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="C" />
+  </children>
+</WELayout>

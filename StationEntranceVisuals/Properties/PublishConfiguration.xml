@@ -43,12 +43,15 @@ I didn't add the visuals to a few stations that didn't have a place to display t
   <Screenshot Value="ParadoxRes/Screenshot6.png" />
   <Tag Value="Code Mod" />
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-  <ModVersion Value="2.0" />
+  <ModVersion Value="2.1" />
   <GameVersion Value="1.*" />
   <Dependency Id="92908" />
   <Dependency Id="75426" />
   <ChangeLog>
-# v2.0
+# v2.1
+- Added support to 12 new assets from mods like More Transport and StarQ's Elevated Train Station
+
+Updates from 2.0:
 - Assets completly rewritten by Klyte45. Thanks to the new version of WE, it's much easier to add support to new stations and entrances
 - Settings: It's now possible to change multiple settings like:
   - Line Shape: Choose if you want your lines to be displayed as a round or square shape.
