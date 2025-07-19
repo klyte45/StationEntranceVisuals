@@ -6,7 +6,7 @@
 
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFramework>net48</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <LangVersion>12</LangVersion>
 		<Configurations>Debug;Release</Configurations>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
