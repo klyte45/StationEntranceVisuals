@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Game.Prefabs;
+using HarmonyLib;
 using Unity.Entities;
 
 namespace StationEntranceVisuals.Formulas;
@@ -46,6 +47,20 @@ public class DisplaySettings
         };
     }
     
+    public static string GetOperatorIconWhite(Entity buildingRef, Dictionary<string, string> vars)
+    {
+        if (!vars.TryGetValue("lineType", out var lineType))
+        {
+            return "Transparent";
+        }
+        var lines = LinesUtils.GetFilteredLinesList(buildingRef, lineType, true);
+        if (lineType is "Subway" or "All")
+        {
+            return GetSubwayOperatorIcon(lines).Replace("Black", "White");
+        }
+        return GetTrainOperatorIcon(lines).Replace("Black", "White");
+    }
+    
     public static string GetSubwayOperatorIcon(Entity buildingRef, Dictionary<string, string> vars)
     {
         var lines = LinesUtils.GetFilteredLinesList(buildingRef, "Subway", true);
@@ -63,6 +78,18 @@ public class DisplaySettings
         };
     }
     
+    private static string GetSubwayOperatorIcon(HashSet<LineDescriptor> lines)
+    {
+        return Mod.m_Setting.LineOperatorCityDropdown switch
+        {
+            Settings.LineOperatorCityOptions.Generic => GenericSubwayOperator + Black,
+            Settings.LineOperatorCityOptions.SaoPaulo => GetSaoPauloSubwayOperatorIcon(lines),
+            Settings.LineOperatorCityOptions.NewYork => GetNewYorkSubwayOperatorIcon(lines),
+            Settings.LineOperatorCityOptions.London => GetLondonSubwayOperatorIcon(lines),
+            _ => GenericSubwayOperator
+        };
+    }
+    
     public static string GetTrainOperatorIcon(Entity buildingRef, Dictionary<string, string> vars)
     {
         var lines = LinesUtils.GetFilteredLinesList(buildingRef, "Train", true);
@@ -70,6 +97,12 @@ public class DisplaySettings
         {
             return Transparent;
         }
+
+        return GetTrainOperatorIcon(lines);
+    }
+
+    private static string GetTrainOperatorIcon(HashSet<LineDescriptor> lines)
+    {
         return Mod.m_Setting.LineOperatorCityDropdown switch
         {
             Settings.LineOperatorCityOptions.Generic => GenericTrainOperator + Black,

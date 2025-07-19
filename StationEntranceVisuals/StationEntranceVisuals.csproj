@@ -1,19 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+	<!--Imports must be after PropertyGroup block-->
+	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
+	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
+
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFramework>net472</TargetFramework>
+		<TargetFramework>net48</TargetFramework>
     <LangVersion>12</LangVersion>
 		<Configurations>Debug;Release</Configurations>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
 		<!--The file where mod information which is required for publishing mod on PDX mods are stored-->
 		<PublishConfigurationPath>Properties\PublishConfiguration.xml</PublishConfigurationPath>
 		<AdditionalFilesDirectory>Resources</AdditionalFilesDirectory>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
 	
-	<!--Imports must be after PropertyGroup block-->
-	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.props" />
-	<Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets" />
+
 	<Target Name="RunModPostProcessor" AfterTargets="AfterBuild" Condition="False" />
   
 	<ItemGroup>
@@ -56,14 +59,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Update="System">
+		<Reference Include="System">
+			<HintPath>$(CSII_MANAGEDPATH)\System.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Update="System.Core">
+			<HintPath>$(CSII_MANAGEDPATH)\System.Core.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Update="System.Data">
+			<HintPath>$(CSII_MANAGEDPATH)\System.Data.dll</HintPath>
 			<Private>false</Private>
+		</Reference>
+		<Reference Include="mscorlib">
+			<HintPath>$(CSII_MANAGEDPATH)\mscorlib.dll</HintPath>
+			<Private>False</Private>
 		</Reference>
 	</ItemGroup>
 

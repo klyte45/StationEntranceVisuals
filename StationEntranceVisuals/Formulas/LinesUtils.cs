@@ -109,11 +109,17 @@ public static class LinesUtils
         _nameSystem ??= World.DefaultGameObjectInjectionWorld.GetOrCreateSystemManaged<NameSystem>();
         var lineNumberList = GetLines(entityManager, buildingRef, iterateToOwner);
 
+        if (lineType == "All")
+        {
+            return lineNumberList;
+        }
+
         var lineTypes = lineType.Split(',')
-            .Select(x => Enum.TryParse<TransportType>(lineType, out var transportType) ? transportType as TransportType? : null)
+            .Select(x => Enum.TryParse<TransportType>(x, out var transportType) ? transportType as TransportType? : null)
             .Where(x => x.HasValue)
             .Select(x => x.Value)
             .ToList();
+
         return lineTypes.Count > 0
             ? lineNumberList
                 .Where(x => lineTypes.Contains(x.TransportType))
