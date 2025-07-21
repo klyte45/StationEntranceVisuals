@@ -43,13 +43,14 @@ I didn't add the visuals to a few stations that didn't have a place to display t
   <Screenshot Value="ParadoxRes/Screenshot6.png" />
   <Tag Value="Code Mod" />
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-  <ModVersion Value="2.3" />
+  <ModVersion Value="2.4" />
   <GameVersion Value="1.*" />
   <Dependency Id="92908" />
   <Dependency Id="75426" />
   <ChangeLog>
-# v2.2
-- Added support to the station pylon asset
+# v2.3
+ - Added new shapes to line icons. 
+ - You can now select individual shapes based on line type in the mod settings.
   </ChangeLog>
   <ExternalLink Type="kofi" Url="https://ko-fi.com/rodrigmatrix" />
   <ExternalLink Type="github" Url="https://github.com/rodrigmatrix/StationEntranceVisuals" />

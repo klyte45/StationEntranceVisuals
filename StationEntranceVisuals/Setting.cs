@@ -20,7 +20,16 @@ public class Settings(IMod mod) : ModSetting(mod)
     private const string DeveloperSettingsGroup = "DeveloperSettings";
 
     [SettingsUISection(MainTab, GeneralSettingsGroup)]
-    public LineIndicatorShapeOptions LineIndicatorShapeDropdown { get; set; } = LineIndicatorShapeOptions.Square;
+    public LineIndicatorShapeOptions LineIndicatorShapeDropdown { get; set; } = LineIndicatorShapeOptions.Circle;
+    
+    [SettingsUISection(MainTab, GeneralSettingsGroup)]
+    public LineIndicatorShapeOptions TrainShapeDropdown { get; set; } = LineIndicatorShapeOptions.Square;
+    
+    [SettingsUISection(MainTab, GeneralSettingsGroup)]
+    public LineIndicatorShapeOptions BusShapeDropdown { get; set; } = LineIndicatorShapeOptions.Diamond;
+    
+    [SettingsUISection(MainTab, GeneralSettingsGroup)]
+    public LineIndicatorShapeOptions TramShapeDropdown { get; set; } = LineIndicatorShapeOptions.Pentagon;
     
     [SettingsUISection(MainTab, GeneralSettingsGroup)]
     public LineOperatorCityOptions LineOperatorCityDropdown { get; set; } = LineOperatorCityOptions.Generic;
@@ -46,6 +55,9 @@ public class Settings(IMod mod) : ModSetting(mod)
     {
         Square,
         Circle,
+        Diamond,
+        Pentagon,
+        Hexagon
     }
     
     public enum LineOperatorCityOptions
@@ -74,8 +86,17 @@ public class LocaleEn(Settings setting) : IDictionarySource
             { setting.GetOptionTabLocaleID(Settings.MainTab), "Settings" },
             { setting.GetOptionTabLocaleID(Settings.DeveloperTab), "Developer Settings" },
             
-            { setting.GetOptionLabelLocaleID(nameof(Settings.LineIndicatorShapeDropdown)), "Line Indicator Shape" },
-            { setting.GetOptionDescLocaleID(nameof(Settings.LineIndicatorShapeDropdown)), $"Choose what shape you want your entrance to be displayed." },
+            { setting.GetOptionLabelLocaleID(nameof(Settings.LineIndicatorShapeDropdown)), "Subway Line Indicator Shape" },
+            { setting.GetOptionDescLocaleID(nameof(Settings.LineIndicatorShapeDropdown)), $"Choose what shape you want your subway line to be displayed in." },
+            
+            { setting.GetOptionLabelLocaleID(nameof(Settings.TrainShapeDropdown)), "Train Line Indicator Shape" },
+            { setting.GetOptionDescLocaleID(nameof(Settings.TrainShapeDropdown)), $"Choose what shape you want your train line to be displayed in." },
+
+            { setting.GetOptionLabelLocaleID(nameof(Settings.BusShapeDropdown)), "Bus Line Indicator Shape" },
+            { setting.GetOptionDescLocaleID(nameof(Settings.BusShapeDropdown)), $"Choose what shape you want your bus line to be displayed in." },
+
+            { setting.GetOptionLabelLocaleID(nameof(Settings.TramShapeDropdown)), "Tram Line Indicator Shape" },
+            { setting.GetOptionDescLocaleID(nameof(Settings.TramShapeDropdown)), $"Choose what shape you want your tram line to be displayed in." },
 
             { setting.GetOptionLabelLocaleID(nameof(Settings.EnableLayoutValidation)), "Enable Layout Validation" },
             { setting.GetOptionDescLocaleID(nameof(Settings.EnableLayoutValidation)), $"Mock lines for every station to validate the layouts." },
@@ -88,6 +109,9 @@ public class LocaleEn(Settings setting) : IDictionarySource
 
             { setting.GetEnumValueLocaleID(Settings.LineIndicatorShapeOptions.Square), "Square Shape" },
             { setting.GetEnumValueLocaleID(Settings.LineIndicatorShapeOptions.Circle), "Circle Shape" },
+            { setting.GetEnumValueLocaleID(Settings.LineIndicatorShapeOptions.Diamond), "Diamond Shape" },
+            { setting.GetEnumValueLocaleID(Settings.LineIndicatorShapeOptions.Pentagon), "Pentagon Shape" },
+            { setting.GetEnumValueLocaleID(Settings.LineIndicatorShapeOptions.Hexagon), "Hexagon Shape" },
             
             { setting.GetOptionLabelLocaleID(nameof(Settings.LineOperatorCityDropdown)), "Line Operators" },
             { setting.GetOptionDescLocaleID(nameof(Settings.LineOperatorCityDropdown)), $"Choose what should be the line operators. If you choose generic, you can replace the operator with a custom atlas on Write Everywhere settings. If you choose a specific city, it will always have the same atlas and logic for that city" },

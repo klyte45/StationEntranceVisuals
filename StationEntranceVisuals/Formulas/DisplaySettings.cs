@@ -10,6 +10,10 @@ public class DisplaySettings
 {
     private const string Square = "LineBgSquare";
     private const string Circle = "LineBgCircle";
+    private const string Triangle = "LineBgTriangle";
+    private const string Diamond = "LineBgDiamond";
+    private const string Pentagon = "LineBgPentagon";
+    private const string Hexagon = "LineBgHexagon";
     private const string ViaMobilidadeOperator = "ViaMobilidadeOperator";
     private const string CptmOperator = "CptmOperator";
     private const string MetroOperator = "MetroOperator";
@@ -22,12 +26,31 @@ public class DisplaySettings
     private static readonly string[] ViaMobilidadeLines = ["4", "5", "8", "9", "15"];
     private static readonly string[] LinhaUniLines = ["6"];
 
-    public static string GetShapeIcon(Entity buildingRef)
+    public static string GetShapeIcon(Entity buildingRef, Dictionary<string, string> vars)
     {
-        return Mod.m_Setting.LineIndicatorShapeDropdown switch
+        var lineData = LinesUtils.GetLineData(buildingRef, vars);
+        if (lineData.Entity != Entity.Null)
+        {
+            return lineData.TransportType switch
+            {
+                TransportType.Bus => GetShapeIcon(Mod.m_Setting.BusShapeDropdown),
+                TransportType.Train => GetShapeIcon(Mod.m_Setting.TrainShapeDropdown),
+                TransportType.Tram => GetShapeIcon(Mod.m_Setting.TramShapeDropdown),
+                _ => GetShapeIcon(Mod.m_Setting.LineIndicatorShapeDropdown)
+            };
+        }
+        return Square;
+    }
+
+    private static string GetShapeIcon(Settings.LineIndicatorShapeOptions shape)
+    {
+        return shape switch
         {
             Settings.LineIndicatorShapeOptions.Square => Square,
             Settings.LineIndicatorShapeOptions.Circle => Circle,
+            Settings.LineIndicatorShapeOptions.Diamond => Diamond,
+            Settings.LineIndicatorShapeOptions.Pentagon => Pentagon,
+            Settings.LineIndicatorShapeOptions.Hexagon => Hexagon,
             _ => Square
         };
     }
