@@ -43,7 +43,7 @@ I didn't add the visuals to a few stations that didn't have a place to display t
   <Screenshot Value="ParadoxRes/Screenshot6.png" />
   <Tag Value="Code Mod" />
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-  <ModVersion Value="2.2" />
+  <ModVersion Value="2.3" />
   <GameVersion Value="1.*" />
   <Dependency Id="92908" />
   <Dependency Id="75426" />

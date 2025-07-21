@@ -54,6 +54,14 @@ public class DisplaySettings
             return "Transparent";
         }
         var lines = LinesUtils.GetFilteredLinesList(buildingRef, lineType, true);
+        if (lines.Any(x => x.TransportType == TransportType.Bus) || lineType == "Bus")
+        {
+            return "BusGenericWhite";
+        }
+        if (lines.Any(x => x.TransportType == TransportType.Tram) || lineType == "Tram")
+        {
+            return "TramGenericWhite";
+        }
         if (lineType is "Subway" or "All")
         {
             return GetSubwayOperatorIcon(lines).Replace("Black", "White");
