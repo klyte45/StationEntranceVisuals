@@ -24,13 +24,10 @@ If you are on a train station, train lines will be separated on the left and sub
 # Entrance names
 The name of the entrances works differently depending on the type of station
 
-- For vanilla stations:
-- The entrance letter is predefined and you can't change their name. It is localized as "Entrance A" or "Entrance B" and so on.
+- For vanilla stations, region packs and DLCs:
+- The entrance letter is predefined, and you can't change their name. It is localized as "Entrance A" or "Entrance B" and so on.
 - For Subway Freedom:
 - Stations built with subway freedom will have the entrance name as the upgrade name. Change the upgrade name to change the entrance name and change the module name to change the station name.
-
-## Not all stations have visuals
-I didn't add the visuals to a few stations that didn't have a place to display the visuals like the small overground subway station and the small and medium train station.
 
 ### Thanks for Klyte45 for all the work on Write Everywhere.
   </LongDescription>
@@ -43,14 +40,13 @@ I didn't add the visuals to a few stations that didn't have a place to display t
   <Screenshot Value="ParadoxRes/Screenshot6.png" />
   <Tag Value="Code Mod" />
   <ForumLink Value="https://forum.paradoxplaza.com/forum/threads/station-entrance-visuals.1714344/" />
-  <ModVersion Value="2.4" />
+  <ModVersion Value="2.5" />
   <GameVersion Value="1.*" />
   <Dependency Id="92908" />
   <Dependency Id="75426" />
   <ChangeLog>
-# v2.3
- - Added new shapes to line icons. 
- - You can now select individual shapes based on line type in the mod settings.
+# v2.5
+ - Added support to the Netherlands region pack
   </ChangeLog>
   <ExternalLink Type="kofi" Url="https://ko-fi.com/rodrigmatrix" />
   <ExternalLink Type="github" Url="https://github.com/rodrigmatrix/StationEntranceVisuals" />

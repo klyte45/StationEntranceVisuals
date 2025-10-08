@@ -1,0 +1,36 @@
+<WELayout>
+  <children>
+    <self itemName="A">
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="4.16201973" y="3.08" z="45.22" />
+        <offsetRotation x="-0" y="0" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceVisuals:StationEntranceLarge</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="A" />
+  </children>
+  <children>
+    <self itemName="B">
+      <transform pivot="MiddleLeft" alignment="Left" arrayAxisOrder="XYZ">
+        <offsetPosition x="104.935005" y="0.239999682" z="-55.5500031" />
+        <offsetRotation x="-0" y="180" z="0" />
+        <scale x="1" y="1" z="1" />
+        <mustDraw>1</mustDraw>
+        <instanceCount>-1</instanceCount>
+        <arrayInstances x="1" y="1" z="1" />
+        <arraySpacing x="0" y="0" z="0" />
+      </transform>
+      <layoutMesh>
+        <layout>StationEntranceVisuals:StationEntranceMedium</layout>
+      </layoutMesh>
+    </self>
+    <variable key="entrance#" value="B" />
+  </children>
+</WELayout>
