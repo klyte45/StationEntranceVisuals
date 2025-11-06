@@ -11,7 +11,7 @@
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>VanillaUnderground</layout>
+        <layout>StationEntranceSmall</layout>
       </layoutMesh>
     </self>
     <variable key="entrance#" value="B" />
@@ -28,7 +28,7 @@
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>VanillaUnderground</layout>
+        <layout>StationEntranceSmall</layout>
       </layoutMesh>
     </self>
     <variable key="entrance#" value="A" />
@@ -45,7 +45,7 @@
         <arraySpacing x="0" y="0" z="0" />
       </transform>
       <layoutMesh>
-        <layout>VanillaUnderground</layout>
+        <layout>StationEntranceSmall</layout>
       </layoutMesh>
     </self>
     <variable key="entrance#" value="C" />
