@@ -1,4 +1,5 @@
 ﻿using BridgeWE;
+using Colossal.Core;
 using Colossal.IO.AssetDatabase;
 using Colossal.Logging;
 using Game;
@@ -36,11 +37,40 @@ namespace StationEntranceVisuals
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEn(m_Setting));
             AssetDatabase.global.LoadSettings(nameof(StationEntranceVisuals), m_Setting, new Settings(this));
 
+            // Initialize burst-optimized line data systems
+            InitializeLineDataSystems();
+
             var bw = new BackgroundWorker();
             bw.DoWork += DeleteOldFiles;
             bw.RunWorkerAsync();
 
-            GameManager.instance.RegisterUpdater(DoWhenLoaded);
+            MainThreadDispatcher.RegisterUpdater(DoWhenLoaded);
+            (AssetDatabase<ParadoxMods>.instance.dataSource as ParadoxModsDataSource).onAfterActivePlaysetOrModStatusChanged += DoWhenLoaded;
+        }
+
+        private void InitializeLineDataSystems()
+        {
+            log.Info("Initializing burst-optimized line data systems...");
+            var world = World.DefaultGameObjectInjectionWorld;
+            
+            // Create systems in dependency order
+            world.GetOrCreateSystemManaged<StationEntranceVisuals.Systems.LineData.EntityHierarchySystem>();
+            world.GetOrCreateSystemManaged<StationEntranceVisuals.Systems.LineData.LineExtractionSystem>();
+            world.GetOrCreateSystemManaged<StationEntranceVisuals.Systems.LineData.LineCachingSystem>();
+            world.GetOrCreateSystemManaged<StationEntranceVisuals.Systems.LineData.LineDataCoordinatorSystem>();
+            
+            log.Info("Line data systems initialized successfully.");
+        }
+
+        private bool isLoaded = false;
+        private void DoWhenLoaded()
+        {
+            if (isLoaded) return;
+            log.Info($"Loading patches");
+            if (!DoPatches()) return;
+            RegisterFilesToWe();
+            isLoaded = true;
+            (AssetDatabase<ParadoxMods>.instance.dataSource as ParadoxModsDataSource).onAfterActivePlaysetOrModStatusChanged -= DoWhenLoaded;
         }
 
         private static void DeleteOldFiles(object sender, DoWorkEventArgs e)
@@ -48,12 +78,6 @@ namespace StationEntranceVisuals
             FileUtils.DeleteOldFiles();
         }
 
-        private void DoWhenLoaded()
-        {
-            log.Info($"Loading patches");
-            DoPatches();
-            RegisterFilesToWe();
-        }
 
         private static void RegisterFilesToWe()
         {
@@ -155,12 +179,13 @@ namespace StationEntranceVisuals
                 }
                 else
                 {
-                    throw new Exception("No WE Found!");
+                    log.Warn("Write Everywhere dll file required for using this mod! Check if it's enabled.");
+                    return false;
                 }
             }
             catch
             {
-                log.Error("Write Everywhere dll file required for using this mod! Check if it's enabled.");
+                log.Warn("Write Everywhere dll file required for using this mod! Check if it's enabled.");
                 return false;
             }
             return true;

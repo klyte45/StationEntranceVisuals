@@ -17,8 +17,6 @@
 	</PropertyGroup>
 	
 
-	<Target Name="RunModPostProcessor" AfterTargets="AfterBuild" Condition="False" />
-  
 	<ItemGroup>
 		<Reference Include="Game">
 			<Private>false</Private>
