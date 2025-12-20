@@ -44,14 +44,14 @@ public partial class LineExtractionSystem : SystemBase
             EntitiesToProcess = entitiesToProcess,
             ProcessedEntities = processedEntities,
             Results = results,
-            OwnerLookup = SystemAPI.GetComponentLookup<Owner>(true),
-            PrefabRefLookup = SystemAPI.GetComponentLookup<PrefabRef>(true),
-            TransportLineDataLookup = SystemAPI.GetComponentLookup<TransportLineData>(true),
-            ColorLookup = SystemAPI.GetComponentLookup<Game.Routes.Color>(true),
-            RouteNumberLookup = SystemAPI.GetComponentLookup<RouteNumber>(true),
-            ConnectedRouteLookup = SystemAPI.GetBufferLookup<ConnectedRoute>(true),
-            SubObjectLookup = SystemAPI.GetBufferLookup<SubObject>(true),
-            InstalledUpgradeLookup = SystemAPI.GetBufferLookup<InstalledUpgrade>(true)
+            OwnerLookup = GetComponentLookup<Owner>(true),
+            PrefabRefLookup = GetComponentLookup<PrefabRef>(true),
+            TransportLineDataLookup = GetComponentLookup<TransportLineData>(true),
+            ColorLookup = GetComponentLookup<Game.Routes.Color>(true),
+            RouteNumberLookup = GetComponentLookup<RouteNumber>(true),
+            ConnectedRouteLookup = GetBufferLookup<ConnectedRoute>(true),
+            SubObjectLookup = GetBufferLookup<SubObject>(true),
+            InstalledUpgradeLookup = GetBufferLookup<InstalledUpgrade>(true)
         };
 
         job.Schedule().Complete();

@@ -29,11 +29,10 @@ public partial class EntityHierarchySystem : SystemBase
     /// </summary>
     public Entity FindRootEntity(Entity startEntity)
     {
-        var ownerLookup = SystemAPI.GetComponentLookup<Owner>(true);
         var job = new EntityHierarchyTraversalJob
         {
             StartEntity = startEntity,
-            OwnerLookup = ownerLookup,
+            OwnerLookup = GetComponentLookup<Owner>(),
             Result = new NativeReference<Entity>(Allocator.TempJob)
         };
 
