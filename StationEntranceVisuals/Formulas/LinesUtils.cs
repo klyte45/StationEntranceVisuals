@@ -1,5 +1,4 @@
 ﻿using Game.Prefabs;
-using StationEntranceVisuals.Systems.LineData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,7 @@ using StationEntranceVisuals.Utils;
 using Unity.Entities;
 using UnityEngine;
 using Color = UnityEngine.Color;
+using StationEntranceVisuals.Systems;
 
 namespace StationEntranceVisuals.Formulas;
 
@@ -22,9 +22,9 @@ public static class LinesUtils
     /// </summary>
     private static HashSet<LineDescriptor> GetLines(Entity selectedEntity, bool iterateToOwner)
     {
-        var coordinatorSystem = LineDataCoordinatorSystem.Instance;
+        var coordinatorSystem = SEV_BuildingLineCacheSystem.Instance;
         var lines = coordinatorSystem.GetLines(selectedEntity, iterateToOwner);
-        return lines.ToHashSet();
+        return [.. lines];
     }
 
     internal static HashSet<LineDescriptor> GetFilteredLinesList(Entity buildingRef, string lineType, bool iterateToOwner)
@@ -34,14 +34,14 @@ public static class LinesUtils
             return MockLineUtils.GetMockLineDescriptors(buildingRef, lineType);
         }
 
-        var coordinatorSystem = LineDataCoordinatorSystem.Instance;
+        var coordinatorSystem = SEV_BuildingLineCacheSystem.Instance;
         var lines = coordinatorSystem.GetFilteredLines(buildingRef, lineType, iterateToOwner);
         return lines.ToHashSet();
     }
 
     private static LineDescriptor GetLine(Entity buildingRef, int index, string lineType, bool iterateToOwner, bool inverse)
     {
-        var coordinatorSystem = LineDataCoordinatorSystem.Instance;
+        var coordinatorSystem = SEV_BuildingLineCacheSystem.Instance;
         var line = coordinatorSystem.GetLineByIndex(buildingRef, lineType, index, iterateToOwner, inverse);
         return line ?? default;
     }

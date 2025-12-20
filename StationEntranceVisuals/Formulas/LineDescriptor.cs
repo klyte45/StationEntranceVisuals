@@ -1,6 +1,6 @@
-﻿using System;
-using Game.Prefabs;
+﻿using Game.Prefabs;
 using StationEntranceVisuals.Systems;
+using Unity.Collections;
 using Unity.Entities;
 
 namespace StationEntranceVisuals.Formulas;
@@ -10,31 +10,39 @@ public record struct LineDescriptor(
     TransportType TransportType,
     bool IsCargo,
     bool IsPassenger,
-    string Acronym,
+    FixedString32Bytes Acronym,
     int Number,
-    string SmallName,
-    UnityEngine.Color Color)
+    FixedString32Bytes SmallName,
+    UnityEngine.Color Color) : System.IEquatable<LineDescriptor>
 {
 
     public string GetDisplayName()
     {
         return SEV_SettingSystem.Instance.LineDisplayName switch
         {
-            Settings.LineDisplayNameOptions.Custom => SmallName,
-            Settings.LineDisplayNameOptions.WriteEverywhere => Acronym,
+            Settings.LineDisplayNameOptions.Custom => SmallName.ToString(),
+            Settings.LineDisplayNameOptions.WriteEverywhere => Acronym.ToString(),
             Settings.LineDisplayNameOptions.Generated => Number.ToString(),
-            _ => SmallName
+            _ => SmallName.ToString()
         };
     }
-    
+
     public string GetOrderingIndex()
     {
         return SEV_SettingSystem.Instance.LineDisplayName switch
         {
-            Settings.LineDisplayNameOptions.Custom => SmallName,
-            Settings.LineDisplayNameOptions.WriteEverywhere => Acronym,
+            Settings.LineDisplayNameOptions.Custom => SmallName.ToString(),
+            Settings.LineDisplayNameOptions.WriteEverywhere => Acronym.ToString(),
             Settings.LineDisplayNameOptions.Generated => Number.ToString(),
-            _ => SmallName
+            _ => SmallName.ToString()
         };
+    }
+    public bool Equals(LineDescriptor other)
+    {
+        return Entity.Equals(other.Entity);
+    }
+    public override int GetHashCode()
+    {
+        return Entity.GetHashCode();
     }
 }

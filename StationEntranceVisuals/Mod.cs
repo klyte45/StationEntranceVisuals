@@ -54,10 +54,7 @@ namespace StationEntranceVisuals
             var world = World.DefaultGameObjectInjectionWorld;
             
             // Create systems in dependency order
-            world.GetOrCreateSystemManaged<StationEntranceVisuals.Systems.LineData.EntityHierarchySystem>();
-            world.GetOrCreateSystemManaged<StationEntranceVisuals.Systems.LineData.LineExtractionSystem>();
-            world.GetOrCreateSystemManaged<StationEntranceVisuals.Systems.LineData.LineCachingSystem>();
-            world.GetOrCreateSystemManaged<StationEntranceVisuals.Systems.LineData.LineDataCoordinatorSystem>();
+            world.GetOrCreateSystemManaged<SEV_BuildingLineCacheSystem>();
             
             log.Info("Line data systems initialized successfully.");
         }
