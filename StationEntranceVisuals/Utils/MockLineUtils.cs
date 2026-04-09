@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Game.Prefabs;
+using StationEntranceVisuals.Components.Shareable;
 using StationEntranceVisuals.Formulas;
 using Unity.Entities;
 using UnityEngine;
@@ -55,8 +56,8 @@ public static class MockLineUtils
                     true,
                     "T" + (i + 1),
                     (i + 1),
-                    "T" + (i + 1),
-                    lineColor
+                    lineColor,
+                    "T" + (i + 1)
                 )
             );
         }
@@ -77,8 +78,8 @@ public static class MockLineUtils
                     true,
                     "S" + (i + 1),
                     (i + 1),
-                    "S" + (i + 1),
-                    lineColor
+                    lineColor,
+                    "S" + (i + 1)
                 )
             );
         }

@@ -2,6 +2,7 @@
 using System.Linq;
 using Game.Prefabs;
 using HarmonyLib;
+using StationEntranceVisuals.Components.Shareable;
 using StationEntranceVisuals.Systems;
 using Unity.Entities;
 
